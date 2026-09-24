@@ -2,9 +2,49 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-09-24T15:45:51.210Z"
+    "lastCrawl": "2026-09-24T15:57:00.083Z"
   },
   "entries": [
+    {
+      "date": "2026-09-24",
+      "platform": "百川智能 Baichuan",
+      "type": "changed",
+      "title": "百川智能 Baichuan 页面内容变化（自动检测）",
+      "detail": "关键词命中数变化：0 → 1。自动检测，需人工复查后确认额度是否真的变动。片段：口文档 医疗大模型 通用大模型 知识库 向量化模型 文件管理 错误码 财务相关 发票 MCP 申请加入海纳百川计划 · 免费使用M3Plus API © 2026 北京百川智能科技有限公司 京ICP备2023015490号-1 | 京B2-20",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "腾讯混元 Hunyuan",
+      "type": "changed",
+      "title": "腾讯混元 Hunyuan 页面内容变化（自动检测）",
+      "detail": "关键词命中数变化：12 → 50。自动检测，需人工复查后确认额度是否真的变动。片段：-26 10:56:00 微信扫一扫 QQ 新浪微博 复制链接 链接复制成功 我的收藏 本页目录： 计费方式 开通方式 免费额度 混元生文价格说明 token 后付费 计费与结算方式 费用计算示例 后付费 注意： 为进一步提升大模型服务体验，腾",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "百川智能 Baichuan",
+      "type": "unreachable",
+      "title": "核验失败：百川智能 Baichuan 页面无法访问",
+      "detail": "抓取 https://platform.baichuan-ai.com/price 失败（404）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "阶跃星辰 StepFun",
+      "type": "changed",
+      "title": "阶跃星辰 StepFun 页面内容变化（自动检测）",
+      "detail": "关键词命中数变化：0 → 1。自动检测，需人工复查后确认额度是否真的变动。片段：接试模型效果，确认可用后再回来接 API 打开 Studio 继续构建与获得支持 开发者计划 面向独立开发者与初创团队的额度与技术支持 Builder Program Startup Program 技术支持 交流群、企业对接与限速提升申请 p",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "平台生态扩充",
+      "type": "added",
+      "title": "新增收录 4 个国内开放模型平台并全面人工核验",
+      "detail": "新增零一万物 01.AI、讯飞星火 Spark、腾讯混元 Hunyuan、百川智能 Baichuan；全面复核 DeepSeek、阶跃星辰、CodeGeeX 额度政策，收录总数达到 13 家。",
+      "verified": true
+    },
     {
       "date": "2026-09-24",
       "platform": "阶跃星辰 StepFun",

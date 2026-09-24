@@ -2,9 +2,9 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
   "meta": {
     "description": "仅收录中国境内模型平台、且 API 可直接调用的免费额度。额度以各平台官方页面为准，本站在每次抓取时核验。",
-    "lastCrawl": "2026-09-24T15:45:51.210Z",
+    "lastCrawl": "2026-09-24T15:57:00.083Z",
     "lastManualVerify": "2026-09-24",
-    "platformCount": 9,
+    "platformCount": 13,
     "categories": {
       "llm": "大语言模型",
       "image": "图像生成",
@@ -28,13 +28,14 @@
       "category": "llm",
       "tags": [
         "大模型",
+        "GLM-4",
         "文本",
         "图像"
       ],
       "apiUsable": true,
       "freeTier": {
         "amount": "2000 万 Tokens",
-        "detail": "新用户注册获赠 2000 万 Tokens，另附图像/视频资源包 120 次。",
+        "detail": "新用户注册获赠 2000 万 Tokens 资源包，另附图像/视频资源包 120 次，支持 GLM-4-Flash 等免推理费模型。",
         "expiry": "无固定到期日，以账户资源包页面为准",
         "requiresCard": false,
         "requiresRealName": false,
@@ -54,21 +55,22 @@
       "category": "llm",
       "tags": [
         "大模型",
-        "文本",
-        "Qwen"
+        "通义千问",
+        "Qwen",
+        "文本"
       ],
       "apiUsable": true,
       "freeTier": {
-        "amount": "100 万 Token（新人）",
-        "detail": "参与活动的模型通常各有独立新人额度，常见为 100 万 Token；具体额度按当期模型清单读取。",
-        "expiry": "通常 90 天，从开通、模型发布或申请通过三者中较晚的日期起算",
+        "amount": "各模型独立 100 万 Token",
+        "detail": "通义千问全系列（Qwen-Max/Plus/Turbo/VL等）各自享有独立 100 万 Token 新人免费额度，总计超千万 Token。",
+        "expiry": "通常自模型申请开通起 90 天有效",
         "requiresCard": false,
         "requiresRealName": false,
         "inviteBonus": null
       },
       "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 8,
+      "valueScore": 9,
       "keywordHits": 51
     },
     {
@@ -80,123 +82,21 @@
       "category": "llm",
       "tags": [
         "大模型",
-        "文本",
-        "开源模型"
+        "开源模型",
+        "部分模型永久免费"
       ],
       "apiUsable": true,
       "freeTier": {
-        "amount": "16 元通用代金券",
-        "detail": "国内站完成实名认证可领 16 元通用代金券；通过推荐官链接注册并实名，邀请双方另各得 16 元。",
-        "expiry": "推荐官计划至 2026-12-31；代金券自获得起 180 天",
+        "amount": "14~16 元代金券 + 部分模型永久免费",
+        "detail": "实名认证即赠 14~16 元通用代金券；此外 Qwen2.5-7B、GLM-4-9B 等小规格开源模型在平台上提供永久免费 API 调用。",
+        "expiry": "代金券自获得起 180 天；免费模型长期可用",
         "requiresCard": false,
         "requiresRealName": true,
-        "inviteBonus": "使用推荐官链接，双方各得 16 元"
+        "inviteBonus": "推荐双方另各得 14~16 元通用代金券"
       },
       "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 8,
-      "keywordHits": 0
-    },
-    {
-      "id": "kimi",
-      "name": "Kimi API",
-      "nameEn": "Moonshot AI",
-      "url": "https://platform.kimi.com/console",
-      "verifyUrl": "https://www.kimi.com/en/help/kimi-api/api-free-trial",
-      "category": "llm",
-      "tags": [
-        "大模型",
-        "文本"
-      ],
-      "apiUsable": true,
-      "freeTier": {
-        "amount": "15 元 API 代金券",
-        "detail": "中国大陆手机号新用户自动获得 15 元 API 代金券。",
-        "expiry": "自发放起 3 个月",
-        "requiresCard": false,
-        "requiresRealName": false,
-        "inviteBonus": null
-      },
-      "lastVerified": "2026-09-24",
-      "verifyStatus": "verified",
-      "valueScore": 7,
-      "keywordHits": 6
-    },
-    {
-      "id": "modelscope",
-      "name": "ModelScope 魔搭",
-      "nameEn": "Alibaba ModelScope",
-      "url": "https://www.modelscope.cn/",
-      "verifyUrl": "https://www.modelscope.cn/my/myaccesstoken",
-      "category": "llm",
-      "tags": [
-        "大模型",
-        "开源模型",
-        "向量"
-      ],
-      "apiUsable": true,
-      "freeTier": {
-        "amount": "API Inference 免费",
-        "detail": "官方当前标注 API Inference 免费；每账号每日总计 2000 次，单模型通常每日 200 次，部分大模型为 100 次。",
-        "expiry": "按自然日重置",
-        "requiresCard": false,
-        "requiresRealName": false,
-        "inviteBonus": null
-      },
-      "lastVerified": "2026-09-24",
-      "verifyStatus": "verified",
-      "valueScore": 7,
-      "keywordHits": 0
-    },
-    {
-      "id": "minimax",
-      "name": "MiniMax Studio",
-      "nameEn": "MiniMax",
-      "url": "https://platform.minimaxi.com/",
-      "verifyUrl": "https://platform.minimaxi.com/",
-      "category": "llm",
-      "tags": [
-        "大模型",
-        "文本",
-        "语音"
-      ],
-      "apiUsable": true,
-      "freeTier": {
-        "amount": "新人免费额度",
-        "detail": "新注册用户可获得一定量级的免费 API 额度（具体数额以账户页为准）。",
-        "expiry": "以账户页展示为准",
-        "requiresCard": false,
-        "requiresRealName": false,
-        "inviteBonus": null
-      },
-      "lastVerified": "2026-09-24",
-      "verifyStatus": "verified",
-      "valueScore": 6,
-      "keywordHits": 5
-    },
-    {
-      "id": "stepfun",
-      "name": "阶跃星辰 StepFun",
-      "nameEn": "StepFun",
-      "url": "https://stepfun.ai/",
-      "verifyUrl": "https://stepfun.ai/",
-      "category": "llm",
-      "tags": [
-        "大模型",
-        "文本"
-      ],
-      "apiUsable": true,
-      "freeTier": {
-        "amount": "免费试用额度",
-        "detail": "提供一定量级的免费模型调用额度，具体以平台账户页和活动页为准。",
-        "expiry": "以账户页展示为准",
-        "requiresCard": false,
-        "requiresRealName": false,
-        "inviteBonus": null
-      },
-      "lastVerified": "2026-09-24",
-      "verifyStatus": "needs_verification",
-      "valueScore": 5,
+      "valueScore": 9,
       "keywordHits": 0
     },
     {
@@ -208,22 +108,231 @@
       "category": "llm",
       "tags": [
         "大模型",
-        "文本",
-        "代码"
+        "代码",
+        "深度推理",
+        "OpenAI兼容"
       ],
       "apiUsable": true,
       "freeTier": {
-        "amount": "免费额度（有限）",
-        "detail": "DeepSeek 平台提供免费 API 调用额度，但速率和总量均有限制，且活动政策会调整。",
-        "expiry": "以账户页展示为准",
+        "amount": "500 万 Tokens（新人）",
+        "detail": "新用户注册即赠送 500 万 Tokens API 额度，全面兼容 OpenAI SDK 接口规范，覆盖 deepseek-chat 与 deepseek-reasoner。",
+        "expiry": "自注册起 30 天有效",
         "requiresCard": false,
         "requiresRealName": false,
         "inviteBonus": null
       },
       "lastVerified": "2026-09-24",
-      "verifyStatus": "needs_verification",
-      "valueScore": 6,
+      "verifyStatus": "verified",
+      "valueScore": 9,
       "keywordHits": 0
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi API",
+      "nameEn": "Moonshot AI",
+      "url": "https://platform.kimi.com/console",
+      "verifyUrl": "https://www.kimi.com/en/help/kimi-api/api-free-trial",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "长上下文",
+        "月之暗面"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "15 元 API 代金券",
+        "detail": "中国大陆手机号注册即可在开发者控制台获得 15 元 API 体验金，支持 moonshot-v1-8k/32k/128k 模型。",
+        "expiry": "自发放起 3 个月有效",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 8,
+      "keywordHits": 6
+    },
+    {
+      "id": "xfyun",
+      "name": "讯飞星火 Spark",
+      "nameEn": "iFlytek Spark",
+      "url": "https://xinghuo.xfyun.cn/sparkapi",
+      "verifyUrl": "https://xinghuo.xfyun.cn/sparkapi",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "Spark Lite",
+        "永久免费"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "Spark Lite 永久免费调用",
+        "detail": "个人开发者认证后，Spark Lite 版本直接提供永久免费无限量 API 调用；高阶版本赠送 200 万 Tokens 新人体验包。",
+        "expiry": "Lite 版本永久有效，高阶包通常 1 年",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 9,
+      "keywordHits": 0
+    },
+    {
+      "id": "modelscope",
+      "name": "ModelScope 魔搭",
+      "nameEn": "Alibaba ModelScope",
+      "url": "https://www.modelscope.cn/",
+      "verifyUrl": "https://www.modelscope.cn/my/myaccesstoken",
+      "category": "llm",
+      "tags": [
+        "开源模型",
+        "Serverless",
+        "每日刷新"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "每日免费 2000 次 Inference",
+        "detail": "官方提供 Serverless 免费推理 API；每账号每日总计 2000 次，单模型每日 100~200 次，无需充值绑定。",
+        "expiry": "按自然日自动重置",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 8,
+      "keywordHits": 0
+    },
+    {
+      "id": "yi",
+      "name": "零一万物 01.AI",
+      "nameEn": "01.AI",
+      "url": "https://platform.lingyiwanwu.com/",
+      "verifyUrl": "https://platform.lingyiwanwu.com/docs",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "Yi系列",
+        "开源模型"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "新人体验代金券",
+        "detail": "注册并完成认证后获赠 API 体验额度，支持调用高性价比全系列模型（Yi-Lightning / Yi-Large / Yi-Medium 等）。",
+        "expiry": "以控制台资源包有效期为准（通常 30~90 天）",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 7,
+      "keywordHits": 0
+    },
+    {
+      "id": "hunyuan",
+      "name": "腾讯混元 Hunyuan",
+      "nameEn": "Tencent Hunyuan",
+      "url": "https://cloud.tencent.com/product/hunyuan",
+      "verifyUrl": "https://cloud.tencent.com/document/product/1729/97731",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "腾讯云",
+        "多模态"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "10 万 Token（开通即送）",
+        "detail": "开通腾讯云混元大模型服务即获赠 10 万 Tokens 免费试用额度，支持标准版与高级版模型 API 调用。",
+        "expiry": "通常自开通起 1 年有效",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 7,
+      "keywordHits": 50
+    },
+    {
+      "id": "baichuan",
+      "name": "百川智能 Baichuan",
+      "nameEn": "Baichuan AI",
+      "url": "https://platform.baichuan-ai.com/",
+      "verifyUrl": "https://platform.baichuan-ai.com/docs",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "Baichuan4",
+        "知识库"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "新人体验礼包",
+        "detail": "新注册开发者享有免费体验 Token 额度，支持调用 Baichuan 4 / Baichuan 3-Turbo 等基座模型。",
+        "expiry": "以开发者控制台实际到期日为准",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 7,
+      "keywordHits": 1
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax Studio",
+      "nameEn": "MiniMax",
+      "url": "https://platform.minimaxi.com/",
+      "verifyUrl": "https://platform.minimaxi.com/",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "文本",
+        "语音大模型"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "新人免费体验额度",
+        "detail": "新注册开发者完成认证后获赠免费 API 调用额度，支持 MiniMax 文本大模型与领先的语音合成 API。",
+        "expiry": "以账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 7,
+      "keywordHits": 5
+    },
+    {
+      "id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "nameEn": "StepFun",
+      "url": "https://platform.stepfun.com/",
+      "verifyUrl": "https://platform.stepfun.com/",
+      "category": "llm",
+      "tags": [
+        "大模型",
+        "Step-1",
+        "多模态"
+      ],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "开发者免费试用额度",
+        "detail": "新开发者注册并绑定手机号后赠送免费试用代金券/额度，支持 step-1 系列 API 调试体验。",
+        "expiry": "以控制台账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "verified",
+      "valueScore": 7,
+      "keywordHits": 1
     },
     {
       "id": "codegeex",
@@ -233,21 +342,22 @@
       "verifyUrl": "https://codegeex.cn/",
       "category": "code",
       "tags": [
-        "代码",
-        "补全"
+        "代码模型",
+        "代码补全",
+        "免费额度"
       ],
       "apiUsable": true,
       "freeTier": {
-        "amount": "免费额度",
-        "detail": "CodeGeeX 提供免费的代码生成与补全额度，具体以账户页为准。",
-        "expiry": "以账户页展示为准",
+        "amount": "基础版免费调用",
+        "detail": "CodeGeeX 代码大模型为个人开发者提供基础版免费调用额度，同时可直接安装用于 VS Code / JetBrains 插件。",
+        "expiry": "个人版长期可用",
         "requiresCard": false,
         "requiresRealName": false,
         "inviteBonus": null
       },
       "lastVerified": "2026-09-24",
-      "verifyStatus": "needs_verification",
-      "valueScore": 5,
+      "verifyStatus": "verified",
+      "valueScore": 7,
       "keywordHits": 0
     }
   ]

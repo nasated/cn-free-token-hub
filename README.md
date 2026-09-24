@@ -12,8 +12,7 @@
 
 **收录范围**：仅中国境内模型平台、且 API 可直接调用的免费额度（不含 App 内专用积分）。
 
-**当前收录**：智谱 BigModel、阿里百炼 DashScope、硅基流动 SiliconFlow、Kimi API、
-ModelScope 魔搭、MiniMax、阶跃星辰 StepFun、DeepSeek、CodeGeeX。
+**当前收录（13 家）**：智谱 BigModel、阿里百炼 DashScope、硅基流动 SiliconFlow、DeepSeek、Kimi API、讯飞星火 Spark、ModelScope 魔搭、零一万物 01.AI、腾讯混元 Hunyuan、百川智能 Baichuan、MiniMax、阶跃星辰 StepFun、CodeGeeX。
 
 ## 部署
 

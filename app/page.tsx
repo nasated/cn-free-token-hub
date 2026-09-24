@@ -56,11 +56,31 @@ export default function Home() {
           国内模型免费 API 额度，一站看齐
         </h1>
         <p className="mt-2 max-w-2xl text-base text-ink-600 dark:text-ink-300">
-          不用挨个平台翻活动页。我们每日自动核验智谱、阿里百炼、硅基流动、Kimi、
-          ModelScope 等平台的免费额度变化，把当前可用的额度整理在这里。
+          不用挨个平台翻活动页。本站每日自动核验智谱、阿里百炼、硅基流动、DeepSeek、Kimi、讯飞星火、零一万物、腾讯混元等 13+ 国内主流大模型平台的免费额度变化，整理出最适合开发者的免费资源库。
         </p>
-        <p className="mt-1 text-xs text-ink-400">
-          最后核验：{lastVerified} · 数据由 GitHub Actions 每日自动刷新
+
+        {/* 统计指标 */}
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 max-w-2xl">
+          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
+            <div className="text-2xl font-bold text-accent-700">13 家</div>
+            <div className="text-xs text-ink-500 dark:text-ink-400">已收录国内大模型平台</div>
+          </div>
+          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
+            <div className="text-2xl font-bold text-free-600">100%</div>
+            <div className="text-xs text-ink-500 dark:text-ink-400">支持 API 编程调用</div>
+          </div>
+          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
+            <div className="text-2xl font-bold text-emerald-600">6 家</div>
+            <div className="text-xs text-ink-500 dark:text-ink-400">无需实名即送额度</div>
+          </div>
+          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
+            <div className="text-2xl font-bold text-ink-700 dark:text-ink-300">每天自动</div>
+            <div className="text-xs text-ink-500 dark:text-ink-400">定时健康核验与发布</div>
+          </div>
+        </div>
+
+        <p className="mt-4 text-xs text-ink-400">
+          最后核验：{lastVerified} · 数据由 GitHub Actions 每日自动核验刷新
         </p>
       </section>
 

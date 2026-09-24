@@ -15,30 +15,68 @@ export interface FetchResult {
   error?: string;
 }
 
-/** 抓取页面 HTML，跟随重定向，15 秒超时。 */
-export async function fetchPage(url: string, timeoutMs = 15000): Promise<FetchResult> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (compatible; CN-Free-Token-Hub/1.0; +https://github.com/nasated/cn-free-token-hub)",
-        Accept: "text/html,application/xhtml+xml",
-      },
-      redirect: "follow",
-    });
-    if (!res.ok) {
-      return { ok: false, status: res.status, error: `HTTP ${res.status}` };
+const BROWSER_HEADERS: Record<string, string> = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+  "Accept":
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+  "Cache-Control": "no-cache",
+  "Pragma": "no-cache",
+  "Sec-Ch-Ua": '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
+  "Sec-Ch-Ua-Mobile": "?0",
+  "Sec-Ch-Ua-Platform": '"Windows"',
+  "Sec-Fetch-Dest": "document",
+  "Sec-Fetch-Mode": "navigate",
+  "Sec-Fetch-Site": "none",
+  "Sec-Fetch-User": "?1",
+  "Upgrade-Insecure-Requests": "1",
+};
+
+/** 抓取页面 HTML，跟随重定向，15 秒超时，支持重试。 */
+export async function fetchPage(
+  url: string,
+  timeoutMs = 15000,
+  maxRetries = 2
+): Promise<FetchResult> {
+  let lastError: string | undefined;
+  let lastStatus: number | undefined;
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      // 延迟重试
+      await new Promise((resolve) => setTimeout(resolve, 1500 * attempt));
     }
-    const html = await res.text();
-    return { ok: true, status: res.status, text: html };
-  } catch (e: any) {
-    return { ok: false, error: e?.message || String(e) };
-  } finally {
-    clearTimeout(timer);
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: BROWSER_HEADERS,
+        redirect: "follow",
+      });
+
+      if (res.ok) {
+        const html = await res.text();
+        return { ok: true, status: res.status, text: html };
+      }
+
+      lastStatus = res.status;
+      lastError = `HTTP ${res.status}`;
+      // 如果是 404 等明确错误则不重试，5xx 或 403/429 可以重试
+      if (res.status >= 400 && res.status < 500 && res.status !== 429 && res.status !== 403) {
+        break;
+      }
+    } catch (e: any) {
+      lastError = e?.message || String(e);
+    } finally {
+      clearTimeout(timer);
+    }
   }
+
+  return { ok: false, status: lastStatus, error: lastError };
 }
 
 /** 把 HTML 还原成可搜索的纯文本。 */
