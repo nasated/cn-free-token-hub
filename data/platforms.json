@@ -2,7 +2,7 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
   "meta": {
     "description": "仅收录中国境内模型平台、且 API 可直接调用的免费额度。额度以各平台官方页面为准，本站在每次抓取时核验。",
-    "lastCrawl": "2026-09-24T15:29:35.064Z",
+    "lastCrawl": "2026-09-24T15:29:58.782Z",
     "lastManualVerify": "2026-09-24",
     "platformCount": 9,
     "categories": {
