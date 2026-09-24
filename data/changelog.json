@@ -2,9 +2,33 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-09-24T15:17:29.232Z"
+    "lastCrawl": "2026-09-24T15:29:58.782Z"
   },
   "entries": [
+    {
+      "date": "2026-09-24",
+      "platform": "阶跃星辰 StepFun",
+      "type": "unreachable",
+      "title": "核验失败：阶跃星辰 StepFun 页面无法访问",
+      "detail": "抓取 https://stepfun.ai/ 失败（503）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "DeepSeek",
+      "type": "changed",
+      "title": "DeepSeek 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
+    {
+      "date": "2026-09-24",
+      "platform": "CodeGeeX",
+      "type": "unreachable",
+      "title": "核验失败：CodeGeeX 页面无法访问",
+      "detail": "抓取 https://codegeex.cn/ 失败（fetch failed）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
     {
       "date": "2026-09-24",
       "platform": "阶跃星辰 StepFun",
