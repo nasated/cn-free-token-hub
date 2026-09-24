@@ -63,3 +63,7 @@ npm run build      # 构建静态站
 ## License
 
 MIT
+
+## 部署状态
+
+✅ 已上线：https://nasated.github.io/cn-free-token-hub/ （2026-09-24）
