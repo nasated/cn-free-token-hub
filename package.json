@@ -1,0 +1,28 @@
+{
+  "name": "cn-free-token-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "国内模型免费 API 额度资讯站 — 每日自动核验，只收录中国境内 API 可调用的免费额度。",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "crawl": "tsx scripts/crawl.ts"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

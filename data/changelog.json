@@ -1,0 +1,17 @@
+{
+  "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
+  "meta": {
+    "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
+    "lastCrawl": "2026-09-24T00:00:00.000Z"
+  },
+  "entries": [
+    {
+      "date": "2026-09-24",
+      "platform": "全部 9 个平台",
+      "type": "init",
+      "title": "站点上线：首次收录 9 个国内 API 免费额度平台",
+      "detail": "智谱 BigModel、阿里百炼、硅基流动、Kimi API、ModelScope、MiniMax、阶跃星辰、DeepSeek、CodeGeeX。其中前 5 个已由人工核验官方页面。",
+      "verified": true
+    }
+  ]
+}

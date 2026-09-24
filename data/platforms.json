@@ -1,0 +1,212 @@
+{
+  "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
+  "meta": {
+    "description": "仅收录中国境内模型平台、且 API 可直接调用的免费额度。额度以各平台官方页面为准，本站在每次抓取时核验。",
+    "lastCrawl": "2026-09-24T00:00:00.000Z",
+    "lastManualVerify": "2026-09-24",
+    "platformCount": 9,
+    "categories": {
+      "llm": "大语言模型",
+      "image": "图像生成",
+      "speech": "语音",
+      "embed": "向量/嵌入",
+      "code": "代码"
+    },
+    "confidence": {
+      "verified": "已核验：官方页面确认，近期有效",
+      "needs_verification": "待核验：信息来自社区/文档，需人工复查官方页面",
+      "unknown": "信息不足：无法确认当前状态"
+    }
+  },
+  "platforms": [
+    {
+      "id": "bigmodel",
+      "name": "智谱 BigModel",
+      "nameEn": "Zhipu AI",
+      "url": "https://open.bigmodel.cn/",
+      "verifyUrl": "https://open.bigmodel.cn/overview",
+      "category": "llm",
+      "tags": ["大模型", "文本", "图像"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "2000 万 Tokens",
+        "detail": "新用户注册获赠 2000 万 Tokens，另附图像/视频资源包 120 次。",
+        "expiry": "无固定到期日，以账户资源包页面为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": "邀请实名注册可累计获得 Tokens，累计上限 2 亿"
+      },
+      "lastVerified": "2026-09-04",
+      "verifyStatus": "verified",
+      "valueScore": 9
+    },
+    {
+      "id": "dashscope",
+      "name": "阿里百炼 DashScope",
+      "nameEn": "Alibaba Cloud Bailian",
+      "url": "https://bailian.console.aliyun.com/",
+      "verifyUrl": "https://help.aliyun.com/zh/model-studio/new-free-quota",
+      "category": "llm",
+      "tags": ["大模型", "文本", "Qwen"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "100 万 Token（新人）",
+        "detail": "参与活动的模型通常各有独立新人额度，常见为 100 万 Token；具体额度按当期模型清单读取。",
+        "expiry": "通常 90 天，从开通、模型发布或申请通过三者中较晚的日期起算",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-04",
+      "verifyStatus": "verified",
+      "valueScore": 8
+    },
+    {
+      "id": "siliconflow",
+      "name": "硅基流动 SiliconFlow",
+      "nameEn": "SiliconFlow",
+      "url": "https://cloud.siliconflow.cn/",
+      "verifyUrl": "https://cloud.siliconflow.cn/me/campaigns/inviter",
+      "category": "llm",
+      "tags": ["大模型", "文本", "开源模型"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "16 元通用代金券",
+        "detail": "国内站完成实名认证可领 16 元通用代金券；通过推荐官链接注册并实名，邀请双方另各得 16 元。",
+        "expiry": "推荐官计划至 2026-12-31；代金券自获得起 180 天",
+        "requiresCard": false,
+        "requiresRealName": true,
+        "inviteBonus": "使用推荐官链接，双方各得 16 元"
+      },
+      "lastVerified": "2026-09-04",
+      "verifyStatus": "verified",
+      "valueScore": 8
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi API",
+      "nameEn": "Moonshot AI",
+      "url": "https://platform.kimi.com/console",
+      "verifyUrl": "https://www.kimi.com/en/help/kimi-api/api-free-trial",
+      "category": "llm",
+      "tags": ["大模型", "文本"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "15 元 API 代金券",
+        "detail": "中国大陆手机号新用户自动获得 15 元 API 代金券。",
+        "expiry": "自发放起 3 个月",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-04",
+      "verifyStatus": "verified",
+      "valueScore": 7
+    },
+    {
+      "id": "modelscope",
+      "name": "ModelScope 魔搭",
+      "nameEn": "Alibaba ModelScope",
+      "url": "https://www.modelscope.cn/",
+      "verifyUrl": "https://www.modelscope.cn/my/myaccesstoken",
+      "category": "llm",
+      "tags": ["大模型", "开源模型", "向量"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "API Inference 免费",
+        "detail": "官方当前标注 API Inference 免费；每账号每日总计 2000 次，单模型通常每日 200 次，部分大模型为 100 次。",
+        "expiry": "按自然日重置",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-04",
+      "verifyStatus": "verified",
+      "valueScore": 7
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax Studio",
+      "nameEn": "MiniMax",
+      "url": "https://platform.minimaxi.com/",
+      "verifyUrl": "https://platform.minimaxi.com/",
+      "category": "llm",
+      "tags": ["大模型", "文本", "语音"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "新人免费额度",
+        "detail": "新注册用户可获得一定量级的免费 API 额度（具体数额以账户页为准）。",
+        "expiry": "以账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "needs_verification",
+      "valueScore": 6
+    },
+    {
+      "id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "nameEn": "StepFun",
+      "url": "https://stepfun.ai/",
+      "verifyUrl": "https://stepfun.ai/",
+      "category": "llm",
+      "tags": ["大模型", "文本"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "免费试用额度",
+        "detail": "提供一定量级的免费模型调用额度，具体以平台账户页和活动页为准。",
+        "expiry": "以账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "needs_verification",
+      "valueScore": 5
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "nameEn": "DeepSeek",
+      "url": "https://platform.deepseek.com/",
+      "verifyUrl": "https://platform.deepseek.com/api_keys",
+      "category": "llm",
+      "tags": ["大模型", "文本", "代码"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "免费额度（有限）",
+        "detail": "DeepSeek 平台提供免费 API 调用额度，但速率和总量均有限制，且活动政策会调整。",
+        "expiry": "以账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "needs_verification",
+      "valueScore": 6
+    },
+    {
+      "id": "codegeex",
+      "name": "CodeGeeX",
+      "nameEn": "CodeGeeX (智谱)",
+      "url": "https://codegeex.cn/",
+      "verifyUrl": "https://codegeex.cn/",
+      "category": "code",
+      "tags": ["代码", "补全"],
+      "apiUsable": true,
+      "freeTier": {
+        "amount": "免费额度",
+        "detail": "CodeGeeX 提供免费的代码生成与补全额度，具体以账户页为准。",
+        "expiry": "以账户页展示为准",
+        "requiresCard": false,
+        "requiresRealName": false,
+        "inviteBonus": null
+      },
+      "lastVerified": "2026-09-24",
+      "verifyStatus": "needs_verification",
+      "valueScore": 5
+    }
+  ]
+}

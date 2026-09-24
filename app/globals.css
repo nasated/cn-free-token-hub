@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-50);
+  color: var(--color-ink-900);
+}
+
+/* 链接无下划线 hover 效果 */
+a {
+  color: var(--color-accent-600);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-accent-700);
+}
+
+/* 卡片悬浮 */
+.card {
+  background: white;
+  border: 1px solid var(--color-ink-200);
+  border-radius: 14px;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-300);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 暗色模式（跟随系统） */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-ink-900);
+    color: var(--color-ink-50);
+  }
+  a {
+    color: var(--color-accent-400);
+  }
+  .card {
+    background: var(--color-ink-800);
+    border-color: var(--color-ink-700);
+  }
+}

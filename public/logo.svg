@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="200" height="60" rx="12" fill="#ca8a04"/>
+  <text x="30" y="38" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#fff">CN Free Token Hub</text>
+  <circle cx="170" cy="30" r="10" fill="#fff" opacity="0.9"/>
+  <text x="170" y="35" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ca8a04" text-anchor="middle">🪙</text>
+</svg>

@@ -1,0 +1,2 @@
+# 自动规范化换行符，避免 Windows/Linux 混用
+* text=auto
