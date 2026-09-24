@@ -2,9 +2,17 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-09-24T15:58:13.651Z"
+    "lastCrawl": "2026-09-24T16:10:36.118Z"
   },
   "entries": [
+    {
+      "date": "2026-09-24",
+      "platform": "零一万物 01.AI",
+      "type": "unreachable",
+      "title": "核验失败：零一万物 01.AI 页面无法访问",
+      "detail": "抓取 https://platform.lingyiwanwu.com/docs 失败（fetch failed）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
     {
       "date": "2026-09-24",
       "platform": "百川智能 Baichuan",
