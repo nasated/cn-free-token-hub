@@ -2,7 +2,7 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
   "meta": {
     "description": "仅收录中国境内模型平台、且 API 可直接调用的免费额度。额度以各平台官方页面为准，本站在每次抓取时核验。",
-    "lastCrawl": "2026-09-24T00:00:00.000Z",
+    "lastCrawl": "2026-09-24T15:17:29.232Z",
     "lastManualVerify": "2026-09-24",
     "platformCount": 9,
     "categories": {
@@ -26,7 +26,11 @@
       "url": "https://open.bigmodel.cn/",
       "verifyUrl": "https://open.bigmodel.cn/overview",
       "category": "llm",
-      "tags": ["大模型", "文本", "图像"],
+      "tags": [
+        "大模型",
+        "文本",
+        "图像"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "2000 万 Tokens",
@@ -36,9 +40,10 @@
         "requiresRealName": false,
         "inviteBonus": "邀请实名注册可累计获得 Tokens，累计上限 2 亿"
       },
-      "lastVerified": "2026-09-04",
+      "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 9
+      "valueScore": 9,
+      "keywordHits": 0
     },
     {
       "id": "dashscope",
@@ -47,7 +52,11 @@
       "url": "https://bailian.console.aliyun.com/",
       "verifyUrl": "https://help.aliyun.com/zh/model-studio/new-free-quota",
       "category": "llm",
-      "tags": ["大模型", "文本", "Qwen"],
+      "tags": [
+        "大模型",
+        "文本",
+        "Qwen"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "100 万 Token（新人）",
@@ -57,9 +66,10 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-04",
+      "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 8
+      "valueScore": 8,
+      "keywordHits": 51
     },
     {
       "id": "siliconflow",
@@ -68,7 +78,11 @@
       "url": "https://cloud.siliconflow.cn/",
       "verifyUrl": "https://cloud.siliconflow.cn/me/campaigns/inviter",
       "category": "llm",
-      "tags": ["大模型", "文本", "开源模型"],
+      "tags": [
+        "大模型",
+        "文本",
+        "开源模型"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "16 元通用代金券",
@@ -78,9 +92,10 @@
         "requiresRealName": true,
         "inviteBonus": "使用推荐官链接，双方各得 16 元"
       },
-      "lastVerified": "2026-09-04",
+      "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 8
+      "valueScore": 8,
+      "keywordHits": 0
     },
     {
       "id": "kimi",
@@ -89,7 +104,10 @@
       "url": "https://platform.kimi.com/console",
       "verifyUrl": "https://www.kimi.com/en/help/kimi-api/api-free-trial",
       "category": "llm",
-      "tags": ["大模型", "文本"],
+      "tags": [
+        "大模型",
+        "文本"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "15 元 API 代金券",
@@ -99,9 +117,10 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-04",
+      "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 7
+      "valueScore": 7,
+      "keywordHits": 6
     },
     {
       "id": "modelscope",
@@ -110,7 +129,11 @@
       "url": "https://www.modelscope.cn/",
       "verifyUrl": "https://www.modelscope.cn/my/myaccesstoken",
       "category": "llm",
-      "tags": ["大模型", "开源模型", "向量"],
+      "tags": [
+        "大模型",
+        "开源模型",
+        "向量"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "API Inference 免费",
@@ -120,9 +143,10 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-04",
+      "lastVerified": "2026-09-24",
       "verifyStatus": "verified",
-      "valueScore": 7
+      "valueScore": 7,
+      "keywordHits": 0
     },
     {
       "id": "minimax",
@@ -131,7 +155,11 @@
       "url": "https://platform.minimaxi.com/",
       "verifyUrl": "https://platform.minimaxi.com/",
       "category": "llm",
-      "tags": ["大模型", "文本", "语音"],
+      "tags": [
+        "大模型",
+        "文本",
+        "语音"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "新人免费额度",
@@ -142,8 +170,9 @@
         "inviteBonus": null
       },
       "lastVerified": "2026-09-24",
-      "verifyStatus": "needs_verification",
-      "valueScore": 6
+      "verifyStatus": "verified",
+      "valueScore": 6,
+      "keywordHits": 5
     },
     {
       "id": "stepfun",
@@ -152,7 +181,10 @@
       "url": "https://stepfun.ai/",
       "verifyUrl": "https://stepfun.ai/",
       "category": "llm",
-      "tags": ["大模型", "文本"],
+      "tags": [
+        "大模型",
+        "文本"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "免费试用额度",
@@ -164,7 +196,8 @@
       },
       "lastVerified": "2026-09-24",
       "verifyStatus": "needs_verification",
-      "valueScore": 5
+      "valueScore": 5,
+      "keywordHits": 0
     },
     {
       "id": "deepseek",
@@ -173,7 +206,11 @@
       "url": "https://platform.deepseek.com/",
       "verifyUrl": "https://platform.deepseek.com/api_keys",
       "category": "llm",
-      "tags": ["大模型", "文本", "代码"],
+      "tags": [
+        "大模型",
+        "文本",
+        "代码"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "免费额度（有限）",
@@ -185,7 +222,8 @@
       },
       "lastVerified": "2026-09-24",
       "verifyStatus": "needs_verification",
-      "valueScore": 6
+      "valueScore": 6,
+      "keywordHits": 0
     },
     {
       "id": "codegeex",
@@ -194,7 +232,10 @@
       "url": "https://codegeex.cn/",
       "verifyUrl": "https://codegeex.cn/",
       "category": "code",
-      "tags": ["代码", "补全"],
+      "tags": [
+        "代码",
+        "补全"
+      ],
       "apiUsable": true,
       "freeTier": {
         "amount": "免费额度",
@@ -206,7 +247,8 @@
       },
       "lastVerified": "2026-09-24",
       "verifyStatus": "needs_verification",
-      "valueScore": 5
+      "valueScore": 5,
+      "keywordHits": 0
     }
   ]
 }
