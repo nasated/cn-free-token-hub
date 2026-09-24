@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+const repoName = "cn-free-token-hub";
+
 const nextConfig = {
   // 静态导出：发布到 GitHub Pages，零服务器
   output: "export",
@@ -6,9 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // 便于 GitHub Pages 子路径部署；仓库名为根时为空即可
-  basePath: "",
-  assetPrefix: "",
+  // GitHub Pages 子路径部署：必须匹配仓库路径，避免 CSS/JS 丢失
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}` : undefined,
 };
 
 export default nextConfig;
