@@ -1,6 +1,12 @@
-import Header from "@/components/Header";
+"use client";
+
+import { useState, useEffect } from "react";
+import Sidebar from "@/components/Sidebar";
+import MobileTabBar from "@/components/MobileTabBar";
 import Feed from "@/components/Feed";
-import Changelog from "@/components/Changelog";
+import ChangelogView from "@/components/ChangelogView";
+import AboutView from "@/components/AboutView";
+import ThemeToggle from "@/components/ThemeToggle";
 import platformsData from "@/data/platforms.json";
 import changelogData from "@/data/changelog.json";
 
@@ -36,83 +42,155 @@ export interface ChangelogEntry {
   verified: boolean;
 }
 
-const lastVerified = platformsData.platforms
-  .map((p) => p.lastVerified)
-  .sort()
-  .pop();
+const platforms = platformsData.platforms as unknown as Platform[];
+const changelogEntries = changelogData.entries as unknown as ChangelogEntry[];
+const lastVerified = platforms.map((p) => p.lastVerified).sort().pop() || "今日";
+const noRealNameCount = platforms.filter((p) => !p.freeTier.requiresRealName).length;
 
 export default function Home() {
+  const [currentTab, setCurrentTab] = useState<string>("featured");
+  const [starredIds, setStarredIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    try {
+      const savedStars = localStorage.getItem("cn-free-stars");
+      if (savedStars) {
+        setStarredIds(JSON.parse(savedStars));
+      }
+    } catch {}
+  }, []);
+
+  const handleToggleStar = (id: string) => {
+    setStarredIds((prev) => {
+      const next = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id];
+      try {
+        localStorage.setItem("cn-free-stars", JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  };
+
   return (
-    <main className="min-h-screen">
-      <Header />
-
-      {/* Hero */}
-      <section className="mx-auto max-w-5xl px-4 pt-10 pb-4">
-        <div className="inline-flex items-center gap-2 rounded-full bg-accent-50 px-3 py-1 text-xs font-medium text-accent-700">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-          每日自动核验 · 仅收录国内 API 可调用免费额度
-        </div>
-        <h1 className="mt-3 text-3xl font-bold leading-tight text-ink-900 dark:text-ink-50 sm:text-4xl">
-          国内模型免费 API 额度，一站看齐
-        </h1>
-        <p className="mt-2 max-w-2xl text-base text-ink-600 dark:text-ink-300">
-          不用挨个平台翻活动页。本站每日自动核验智谱、阿里百炼、硅基流动、DeepSeek、Kimi、讯飞星火、零一万物、腾讯混元等 13+ 国内主流大模型平台的免费额度变化，整理出最适合开发者的免费资源库。
-        </p>
-
-        {/* 统计指标 */}
-        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 max-w-2xl">
-          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
-            <div className="text-2xl font-bold text-accent-700">13 家</div>
-            <div className="text-xs text-ink-500 dark:text-ink-400">已收录国内大模型平台</div>
-          </div>
-          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
-            <div className="text-2xl font-bold text-free-600">100%</div>
-            <div className="text-xs text-ink-500 dark:text-ink-400">支持 API 编程调用</div>
-          </div>
-          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
-            <div className="text-2xl font-bold text-emerald-600">6 家</div>
-            <div className="text-xs text-ink-500 dark:text-ink-400">无需实名即送额度</div>
-          </div>
-          <div className="rounded-xl border border-ink-100 bg-white/60 p-3 shadow-sm dark:border-ink-800 dark:bg-ink-900/60">
-            <div className="text-2xl font-bold text-ink-700 dark:text-ink-300">每天自动</div>
-            <div className="text-xs text-ink-500 dark:text-ink-400">定时健康核验与发布</div>
-          </div>
-        </div>
-
-        <p className="mt-4 text-xs text-ink-400">
-          最后核验：{lastVerified} · 数据由 GitHub Actions 每日自动核验刷新
-        </p>
-      </section>
-
-      <Feed
-        platforms={platformsData.platforms as unknown as Platform[]}
-        changelog={changelogData.entries as unknown as ChangelogEntry[]}
+    <div className="flex min-h-screen bg-surface-base text-ink-900 transition-colors">
+      {/* PC 侧边栏 */}
+      <Sidebar
+        currentTab={currentTab}
+        onSelectTab={setCurrentTab}
+        platformCount={platforms.length}
+        noRealNameCount={noRealNameCount}
+        starredCount={starredIds.length}
+        lastUpdated={lastVerified}
       />
 
-      <Changelog
-        entries={changelogData.entries as unknown as ChangelogEntry[]}
-      />
-
-      {/* Footer */}
-      <footer className="border-t border-ink-200 dark:border-ink-800">
-        <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-ink-500 dark:text-ink-400">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              CN Free Token Hub · 只收录 API 可调用的国内模型免费额度。额度以各平台官方页面为准，
-              本站仅做聚合与核验，不保证永久有效。
-            </p>
-            <p>
-              <a
-                href="https://github.com/nasated/cn-free-token-hub"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </a>
-            </p>
+      {/* 主展示区 */}
+      <div className="flex flex-1 flex-col min-w-0 pb-20 md:pb-8">
+        {/* 移动端顶栏 */}
+        <header className="md:hidden sticky top-0 z-30 flex items-center justify-between border-b border-surface-border bg-surface-base/90 backdrop-blur-md px-4 py-3">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">🪙</span>
+            <div>
+              <span className="text-sm font-bold tracking-tight text-ink-900">
+                CN FREE API
+              </span>
+              <p className="text-[10px] text-ink-500 font-medium">
+                国内模型额度雷达
+              </p>
+            </div>
           </div>
-        </div>
-      </footer>
-    </main>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+          </div>
+        </header>
+
+        {/* 主体内容 */}
+        <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex-1">
+          {/* Hero 区域（仅在精选/全部页面呈现） */}
+          {["featured", "all", "no_realname", "permanent"].includes(currentTab) && (
+            <div className="mb-6 rounded-2xl border border-surface-border bg-gradient-to-br from-surface-card via-surface-card to-surface-hover/50 p-5 sm:p-7 shadow-sm">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 border border-amber-200 dark:bg-amber-950 dark:border-amber-800">
+                  <span className="live-pulse"></span>
+                  每日自动核验 · 纯境内 API 免费额度
+                </span>
+                <span className="text-xs text-ink-400">
+                  基准日期：{lastVerified}
+                </span>
+              </div>
+
+              <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-ink-950">
+                国内模型免费 API 额度，一站看全
+              </h1>
+              <p className="mt-2 text-xs sm:text-sm text-ink-600 max-w-2xl leading-relaxed">
+                不用挨个翻官方控制台。每日自动核验智谱、阿里百炼、硅基流动、DeepSeek、Kimi、讯飞星火、零一万物、腾讯混元等 13+ 国内主流大模型平台的免费额度政策。
+              </p>
+
+              {/* 核心指标统计 */}
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <div className="rounded-xl border border-surface-border bg-surface-card p-3 shadow-2xs">
+                  <div className="text-lg sm:text-xl font-bold font-mono text-brand-accent">
+                    {platforms.length} 家
+                  </div>
+                  <div className="text-[11px] text-ink-500 font-medium">
+                    收录国内主流大模型
+                  </div>
+                </div>
+                <div className="rounded-xl border border-surface-border bg-surface-card p-3 shadow-2xs">
+                  <div className="text-lg sm:text-xl font-bold font-mono text-emerald-600">
+                    {noRealNameCount} 家
+                  </div>
+                  <div className="text-[11px] text-ink-500 font-medium">
+                    免实名直接领用
+                  </div>
+                </div>
+                <div className="rounded-xl border border-surface-border bg-surface-card p-3 shadow-2xs">
+                  <div className="text-lg sm:text-xl font-bold font-mono text-brand-accent">
+                    100%
+                  </div>
+                  <div className="text-[11px] text-ink-500 font-medium">
+                    API 直接编程调用
+                  </div>
+                </div>
+                <div className="rounded-xl border border-surface-border bg-surface-card p-3 shadow-2xs">
+                  <div className="text-lg sm:text-xl font-bold font-mono text-ink-700">
+                    06:17
+                  </div>
+                  <div className="text-[11px] text-ink-500 font-medium">
+                    每天定时自动重建
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* 动态视图渲染 */}
+          {currentTab === "changelog" ? (
+            <ChangelogView entries={changelogEntries} />
+          ) : currentTab === "about" ? (
+            <AboutView />
+          ) : (
+            <Feed
+              platforms={platforms}
+              currentTab={currentTab}
+              onTabChange={setCurrentTab}
+              starredIds={starredIds}
+              onToggleStar={handleToggleStar}
+            />
+          )}
+        </main>
+
+        {/* 底部版权 */}
+        <footer className="mt-12 border-t border-surface-border pt-6 pb-2 text-center text-xs text-ink-400">
+          <p>
+            CN Free Token Hub · 借鉴 aihot 风格架构与 AI-Search 零成本自动更新机制
+          </p>
+          <p className="mt-1">
+            数据由 GitHub Actions 每日自动核验 · 仅收录合法合规境内模型 API
+          </p>
+        </footer>
+      </div>
+
+      {/* 移动端底部 Tab 栏 */}
+      <MobileTabBar currentTab={currentTab} onSelectTab={setCurrentTab} />
+    </div>
   );
 }

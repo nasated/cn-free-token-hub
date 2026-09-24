@@ -4,65 +4,125 @@
 
 :root {
   color-scheme: light;
+  --bg-base: #faf9f6;
+  --bg-card: #ffffff;
+  --bg-hover: #f3f1ec;
+  --border-color: #eae8e3;
+  --ink-950: #0a0e10;
+  --ink-900: #13191c;
+  --ink-800: #252e33;
+  --ink-700: #3f4c54;
+  --ink-600: #5c6b73;
+  --ink-500: #7f919b;
+  --ink-400: #a7b7bf;
+  --ink-300: #cfd8dc;
+  --ink-200: #e2e8ec;
+  --ink-100: #f1f4f6;
+  --ink-50: #fafaf8;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-base: #13191c;
+  --bg-card: #192126;
+  --bg-hover: #222d33;
+  --border-color: #263339;
+  --ink-950: #f8fafc;
+  --ink-900: #f1f5f9;
+  --ink-800: #e2e8f0;
+  --ink-700: #cbd5e1;
+  --ink-600: #94a3b8;
+  --ink-500: #64748b;
+  --ink-400: #475569;
+  --ink-300: #334155;
+  --ink-200: #263339;
+  --ink-100: #1c262c;
+  --ink-50: #13191c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg-base: #13191c;
+    --bg-card: #192126;
+    --bg-hover: #222d33;
+    --border-color: #263339;
+    --ink-950: #f8fafc;
+    --ink-900: #f1f5f9;
+    --ink-800: #e2e8f0;
+    --ink-700: #cbd5e1;
+    --ink-600: #94a3b8;
+    --ink-500: #64748b;
+    --ink-400: #475569;
+    --ink-300: #334155;
+    --ink-200: #263339;
+    --ink-100: #1c262c;
+    --ink-50: #13191c;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--ink-900);
 }
 
 body {
-  background-color: var(--color-ink-50);
-  color: var(--color-ink-900);
+  background-color: var(--bg-base);
+  color: var(--ink-900);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 链接无下划线 hover 效果 */
-a {
-  color: var(--color-accent-600);
-  text-decoration: none;
+/* aihot 经典卡片质感 */
+.aihot-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-a:hover {
-  text-decoration: underline;
-  color: var(--color-accent-700);
-}
-
-/* 卡片悬浮 */
-.card {
-  background: white;
-  border: 1px solid var(--color-ink-200);
-  border-radius: 14px;
-  transition: box-shadow 0.18s ease, transform 0.18s ease;
-}
-.card:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+.aihot-card:hover {
+  border-color: rgba(217, 119, 6, 0.4);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* 滚动条 */
+/* aihot 已读状态（轻微降级） */
+.fc-read {
+  opacity: 0.65;
+}
+.fc-read:hover {
+  opacity: 0.95;
+}
+
+/* 呼吸更新状态指示点 */
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.live-pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: pulse-dot 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* 优雅细滚动条 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-ink-300);
+  background: var(--ink-300);
   border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-400);
 }
 ::-webkit-scrollbar-track {
   background: transparent;
-}
-
-/* 暗色模式（跟随系统） */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-  body {
-    background-color: var(--color-ink-900);
-    color: var(--color-ink-50);
-  }
-  a {
-    color: var(--color-accent-400);
-  }
-  .card {
-    background: var(--color-ink-800);
-    border-color: var(--color-ink-700);
-  }
 }

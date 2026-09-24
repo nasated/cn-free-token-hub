@@ -1,54 +1,78 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Platform, ChangelogEntry } from "@/app/page";
+import { useState, useMemo, useEffect } from "react";
+import { Platform } from "@/app/page";
 import PlatformCard from "./PlatformCard";
-
-const CATEGORIES = [
-  { id: "all", label: "全部类别" },
-  { id: "llm", label: "大语言模型" },
-  { id: "image", label: "图像生成" },
-  { id: "speech", label: "语音模型" },
-  { id: "embed", label: "向量/嵌入" },
-  { id: "code", label: "代码补全" },
-];
+import FeedItem from "./FeedItem";
 
 const SORTS = [
-  { id: "value", label: "推荐性价比优先" },
-  { id: "newest", label: "最新核验优先" },
-  { id: "name", label: "平台名称字母序" },
-];
-
-const QUICK_FILTERS = [
-  { id: "all", label: "全部" },
-  { id: "no_realname", label: "⚡ 仅看免实名" },
-  { id: "permanent", label: "🎁 含永久免费" },
-  { id: "high_score", label: "⭐ 高分推荐" },
+  { id: "value", label: "🔥 推荐性价比优先" },
+  { id: "newest", label: "⏱️ 最新核验优先" },
+  { id: "name", label: "🔤 平台名称拼音序" },
 ];
 
 interface FeedProps {
   platforms: Platform[];
-  changelog: ChangelogEntry[];
+  currentTab: string;
+  onTabChange?: (tab: string) => void;
+  starredIds: string[];
+  onToggleStar: (id: string) => void;
 }
 
-export default function Feed({ platforms, changelog }: FeedProps) {
-  const [category, setCategory] = useState("all");
+export default function Feed({
+  platforms,
+  currentTab,
+  starredIds,
+  onToggleStar,
+}: FeedProps) {
+  // 视图模式：'stream' (条目流，类似 aihot 经典资讯流) 或 'grid' (卡片矩阵)
+  const [viewMode, setViewMode] = useState<"stream" | "grid">("stream");
   const [sort, setSort] = useState("value");
-  const [quickFilter, setQuickFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [readIds, setReadIds] = useState<string[]>([]);
+
+  // 读取已读记录
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("cn-free-read-items");
+      if (saved) {
+        setReadIds(JSON.parse(saved));
+      }
+      const savedView = localStorage.getItem("cn-free-view-mode");
+      if (savedView === "grid" || savedView === "stream") {
+        setViewMode(savedView);
+      }
+    } catch {}
+  }, []);
+
+  const handleMarkRead = (id: string) => {
+    if (!readIds.includes(id)) {
+      const next = [...readIds, id];
+      setReadIds(next);
+      try {
+        localStorage.setItem("cn-free-read-items", JSON.stringify(next));
+      } catch {}
+    }
+  };
+
+  const handleViewChange = (mode: "stream" | "grid") => {
+    setViewMode(mode);
+    try {
+      localStorage.setItem("cn-free-view-mode", mode);
+    } catch {}
+  };
 
   const filtered = useMemo(() => {
     return platforms
       .filter((p) => {
-        // 类别筛选
-        if (category !== "all" && p.category !== category) return false;
+        // Tab 过滤
+        if (currentTab === "no_realname" && p.freeTier.requiresRealName) return false;
+        if (currentTab === "permanent" && !p.freeTier.amount.includes("永久") && !p.tags.some(t => t.includes("永久"))) return false;
+        if (currentTab === "starred" && !starredIds.includes(p.id)) return false;
+        if (currentTab === "cat_llm" && p.category !== "llm") return false;
+        if (currentTab === "cat_code" && p.category !== "code") return false;
 
-        // 快捷特性筛选
-        if (quickFilter === "no_realname" && p.freeTier.requiresRealName) return false;
-        if (quickFilter === "permanent" && !p.freeTier.amount.includes("永久") && !p.tags.some(t => t.includes("永久"))) return false;
-        if (quickFilter === "high_score" && p.valueScore < 8) return false;
-
-        // 搜索词过滤（名称、英文名、标签、额度说明）
+        // 搜索词过滤
         if (searchQuery.trim()) {
           const q = searchQuery.toLowerCase().trim();
           const matchName = p.name.toLowerCase().includes(q);
@@ -68,37 +92,75 @@ export default function Feed({ platforms, changelog }: FeedProps) {
         if (sort === "newest") return b.lastVerified.localeCompare(a.lastVerified);
         return a.name.localeCompare(b.name, "zh-CN");
       });
-  }, [platforms, category, quickFilter, searchQuery, sort]);
+  }, [platforms, currentTab, starredIds, searchQuery, sort]);
+
+  const tabTitleMap: Record<string, string> = {
+    featured: "精选热门免费额度",
+    all: "全部收录平台",
+    no_realname: "免实名即可领用平台",
+    permanent: "包含永久/长期免费模型平台",
+    starred: "我的收藏平台",
+    cat_llm: "大语言模型（LLM）开放平台",
+    cat_code: "代码大模型平台",
+  };
+
+  const title = tabTitleMap[currentTab] || "平台额度列表";
 
   return (
-    <section id="feed" className="mx-auto max-w-5xl px-4 py-6">
-      {/* 搜索与工具栏 */}
-      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="relative flex-1 max-w-md">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="搜索平台（如 DeepSeek、通义千问、Qwen、代码）..."
-            className="w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2 pl-9 text-sm text-ink-900 placeholder:text-ink-400 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-100 dark:placeholder:text-ink-500"
-          />
-          <span className="absolute left-3 top-2.5 text-ink-400 text-sm">🔍</span>
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-2.5 text-xs text-ink-400 hover:text-ink-600 dark:hover:text-ink-200"
-            >
-              ✕
-            </button>
-          )}
+    <div className="space-y-5">
+      {/* 顶部工具栏与统计 */}
+      <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center sm:justify-between pb-3 border-b border-surface-border">
+        <div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-bold tracking-tight text-ink-900">
+              {title}
+            </h2>
+            <span className="rounded-full bg-surface-hover px-2 py-0.5 text-xs font-semibold text-ink-600 border border-surface-border">
+              {filtered.length} 个
+            </span>
+          </div>
+          <p className="text-xs text-ink-500 mt-1">
+            仅收录中国境内 API 可直接调用的额度 · 每日定时核验
+          </p>
         </div>
 
-        <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-          <label className="text-xs text-ink-500 dark:text-ink-400 font-medium">排序方式</label>
+        {/* 视图模式切换与排序 */}
+        <div className="flex flex-wrap items-center gap-2">
+          {/* 视图切换按钮 */}
+          <div className="flex items-center rounded-lg bg-surface-hover p-1 border border-surface-border text-xs">
+            <button
+              type="button"
+              onClick={() => handleViewChange("stream")}
+              className={`flex items-center gap-1 rounded px-2.5 py-1 transition-all ${
+                viewMode === "stream"
+                  ? "bg-surface-card text-brand-accent shadow-sm font-semibold"
+                  : "text-ink-600 hover:text-ink-900"
+              }`}
+              title="切换为条目资讯流视图"
+            >
+              <span>📋</span>
+              <span className="hidden sm:inline">条目流</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleViewChange("grid")}
+              className={`flex items-center gap-1 rounded px-2.5 py-1 transition-all ${
+                viewMode === "grid"
+                  ? "bg-surface-card text-brand-accent shadow-sm font-semibold"
+                  : "text-ink-600 hover:text-ink-900"
+              }`}
+              title="切换为卡片矩阵视图"
+            >
+              <span>🗂️</span>
+              <span className="hidden sm:inline">卡片阵</span>
+            </button>
+          </div>
+
+          {/* 排序下拉 */}
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="rounded-lg border border-ink-200 bg-white px-2.5 py-1.5 text-sm text-ink-800 focus:border-accent-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-ink-100"
+            className="rounded-lg border border-surface-border bg-surface-card px-2.5 py-1.5 text-xs text-ink-800 focus:border-brand-accent focus:outline-none"
           >
             {SORTS.map((s) => (
               <option key={s.id} value={s.id}>
@@ -109,67 +171,73 @@ export default function Feed({ platforms, changelog }: FeedProps) {
         </div>
       </div>
 
-      {/* 分类切换 */}
-      <div className="mb-3 flex flex-wrap gap-1.5">
-        {CATEGORIES.map((c) => (
+      {/* 搜索框 */}
+      <div className="relative">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="搜索模型或平台（如 DeepSeek、通义千问、Qwen2.5、百炼、免实名）..."
+          className="w-full rounded-xl border border-surface-border bg-surface-card px-3.5 py-2.5 pl-9 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent transition-all shadow-sm"
+        />
+        <span className="absolute left-3 top-3 text-ink-400 text-sm">🔍</span>
+        {searchQuery && (
           <button
-            key={c.id}
-            onClick={() => setCategory(c.id)}
-            className={`rounded-full px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
-              category === c.id
-                ? "bg-accent-600 text-white shadow-sm"
-                : "bg-ink-100 text-ink-600 hover:bg-ink-200 dark:bg-ink-700 dark:text-ink-300"
-            }`}
+            onClick={() => setSearchQuery("")}
+            className="absolute right-3 top-2.5 rounded px-1 text-xs text-ink-400 hover:text-ink-700"
           >
-            {c.label}
+            ✕ 清空
           </button>
-        ))}
+        )}
       </div>
 
-      {/* 快捷特性过滤 */}
-      <div className="mb-6 flex flex-wrap items-center gap-2 text-xs">
-        <span className="text-ink-400 mr-1">快捷筛选:</span>
-        {QUICK_FILTERS.map((f) => (
-          <button
-            key={f.id}
-            onClick={() => setQuickFilter(f.id)}
-            className={`px-2.5 py-1 rounded-md transition-colors border ${
-              quickFilter === f.id
-                ? "bg-accent-50 text-accent-700 border-accent-300 dark:bg-accent-950 dark:border-accent-800"
-                : "bg-white text-ink-600 border-ink-200 hover:bg-ink-50 dark:bg-ink-800 dark:text-ink-300 dark:border-ink-700"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
-        <span className="ml-auto text-ink-400 font-medium">
-          显示 {filtered.length} / {platforms.length} 个平台
-        </span>
-      </div>
-
-      {/* 平台网格 */}
+      {/* 渲染列表 */}
       {filtered.length === 0 ? (
-        <div className="card p-12 text-center text-ink-500 dark:text-ink-400">
-          <p className="text-lg">没有找到符合条件的平台</p>
-          <p className="mt-1 text-xs text-ink-400">尝试清空搜索词或切换筛选分类</p>
-          <button
-            onClick={() => {
-              setCategory("all");
-              setQuickFilter("all");
-              setSearchQuery("");
-            }}
-            className="mt-4 px-3 py-1.5 text-xs bg-ink-100 hover:bg-ink-200 text-ink-700 rounded-lg dark:bg-ink-700 dark:text-ink-200"
-          >
-            重置所有筛选
-          </button>
+        <div className="aihot-card p-12 text-center text-ink-500">
+          <p className="text-base font-semibold">没有找到符合条件的平台</p>
+          <p className="mt-1 text-xs text-ink-400">
+            {currentTab === "starred"
+              ? "您还没有收藏任何平台，点击列表右侧的小星星 ⭐ 即可添加收藏"
+              : "尝试清空搜索词或切换侧边栏分类"}
+          </p>
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="mt-4 px-3 py-1.5 text-xs bg-surface-hover hover:bg-surface-border text-ink-700 rounded-lg transition-colors font-medium"
+            >
+              清空搜索词
+            </button>
+          )}
+        </div>
+      ) : viewMode === "stream" ? (
+        <div className="space-y-3">
+          {filtered.map((p, idx) => (
+            <FeedItem
+              key={p.id}
+              platform={p}
+              index={idx}
+              isStarred={starredIds.includes(p.id)}
+              onToggleStar={onToggleStar}
+              isRead={readIds.includes(p.id)}
+              onMarkRead={handleMarkRead}
+            />
+          ))}
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((p) => (
-            <PlatformCard key={p.id} platform={p} />
+          {filtered.map((p, idx) => (
+            <PlatformCard
+              key={p.id}
+              platform={p}
+              index={idx}
+              isStarred={starredIds.includes(p.id)}
+              onToggleStar={onToggleStar}
+              isRead={readIds.includes(p.id)}
+              onMarkRead={handleMarkRead}
+            />
           ))}
         </div>
       )}
-    </section>
+    </div>
   );
 }
