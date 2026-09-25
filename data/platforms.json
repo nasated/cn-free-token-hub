@@ -2,7 +2,7 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
   "meta": {
     "description": "仅收录中国境内模型平台、且 API 可直接调用的免费额度。额度以各平台官方页面为准，本站在每次抓取时核验。",
-    "lastCrawl": "2026-09-24T21:56:17.728Z",
+    "lastCrawl": "2026-09-25T00:35:45.692Z",
     "lastManualVerify": "2026-09-24",
     "platformCount": 13,
     "categories": {
@@ -41,7 +41,7 @@
         "requiresRealName": false,
         "inviteBonus": "邀请实名注册可累计获得 Tokens，累计上限 2 亿"
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0
@@ -68,7 +68,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 51
@@ -94,7 +94,7 @@
         "requiresRealName": true,
         "inviteBonus": "推荐双方另各得 14~16 元通用代金券"
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0
@@ -121,7 +121,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0
@@ -147,7 +147,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 8,
       "keywordHits": 6
@@ -173,7 +173,7 @@
         "requiresRealName": true,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0
@@ -199,7 +199,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 8,
       "keywordHits": 0
@@ -225,7 +225,7 @@
         "requiresRealName": true,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "needs_verification",
       "valueScore": 7,
       "keywordHits": 0
@@ -251,7 +251,7 @@
         "requiresRealName": true,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 7,
       "keywordHits": 50
@@ -277,10 +277,10 @@
         "requiresRealName": true,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "needs_verification",
       "valueScore": 7,
-      "keywordHits": 0
+      "keywordHits": 1
     },
     {
       "id": "minimax",
@@ -303,7 +303,7 @@
         "requiresRealName": true,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 7,
       "keywordHits": 5
@@ -329,7 +329,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "verified",
       "valueScore": 7,
       "keywordHits": 1
@@ -355,7 +355,7 @@
         "requiresRealName": false,
         "inviteBonus": null
       },
-      "lastVerified": "2026-09-24",
+      "lastVerified": "2026-09-25",
       "verifyStatus": "needs_verification",
       "valueScore": 7,
       "keywordHits": 0

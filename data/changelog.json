@@ -2,9 +2,33 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-09-24T21:56:17.728Z"
+    "lastCrawl": "2026-09-25T00:35:45.692Z"
   },
   "entries": [
+    {
+      "date": "2026-09-25",
+      "platform": "零一万物 01.AI",
+      "type": "changed",
+      "title": "零一万物 01.AI 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
+    {
+      "date": "2026-09-25",
+      "platform": "百川智能 Baichuan",
+      "type": "changed",
+      "title": "百川智能 Baichuan 页面内容变化（自动检测）",
+      "detail": "关键词命中数变化：0 → 1。自动检测，需人工复查后确认额度是否真的变动。片段：口文档 医疗大模型 通用大模型 知识库 向量化模型 文件管理 错误码 财务相关 发票 MCP 申请加入海纳百川计划 · 免费使用M3Plus API © 2026 北京百川智能科技有限公司 京ICP备2023015490号-1 | 京B2-20",
+      "verified": false
+    },
+    {
+      "date": "2026-09-25",
+      "platform": "CodeGeeX",
+      "type": "changed",
+      "title": "CodeGeeX 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
     {
       "date": "2026-09-24",
       "platform": "零一万物 01.AI",
