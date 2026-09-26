@@ -2,9 +2,25 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-09-25T00:35:45.692Z"
+    "lastCrawl": "2026-09-26T00:39:56.610Z"
   },
   "entries": [
+    {
+      "date": "2026-09-26",
+      "platform": "零一万物 01.AI",
+      "type": "changed",
+      "title": "零一万物 01.AI 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
+    {
+      "date": "2026-09-26",
+      "platform": "CodeGeeX",
+      "type": "changed",
+      "title": "CodeGeeX 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
     {
       "date": "2026-09-25",
       "platform": "零一万物 01.AI",
