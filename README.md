@@ -1,32 +1,36 @@
 # CN Free Token Hub
 
-> 国内模型免费 API 额度资讯站 · 每日自动核验 · 只收录 API 可调用的免费额度
+> Token 赠送、限时免费、折扣与低价调用雷达 · 同时展示 API 和产品内专用额度
 
 [![GitHub](https://img.shields.io/badge/GitHub-nasated/cn--free--token--hub-blue)](https://github.com/nasated/cn-free-token-hub)
 [![Deploy](https://github.com/nasated/cn-free-token-hub/actions/workflows/deploy.yml/badge.svg)](https://github.com/nasated/cn-free-token-hub/actions)
 
 ## 这是什么
 
-不用挨个平台翻活动页——这个站每日自动核验国内主流模型平台的免费 API 额度，
-把当前可用的额度整理在一个页面里，支持分类筛选和性价比排序。
+首页展示公开新闻和社区中发现的 Token 活动线索，以及人工核对报道或官方规则的活动。旧版固定平台额度保留在“全部额度”。
 
-**收录范围**：仅中国境内模型平台、且 API 可直接调用的免费额度（不含 App 内专用积分）。
+**收录范围**：国内和海外、主流与新产品的 Token 赠送、限时免费、价格折扣和低价调用。API 可调用、产品内专用、使用场景未明会分别标注。
 
 **当前收录（13 家）**：智谱 BigModel、阿里百炼 DashScope、硅基流动 SiliconFlow、DeepSeek、Kimi API、讯飞星火 Spark、ModelScope 魔搭、零一万物 01.AI、腾讯混元 Hunyuan、百川智能 Baichuan、MiniMax、阶跃星辰 StepFun、CodeGeeX。
 
 ## 项目文档速查
 
-- 📖 **[项目背景与架构设计文档](docs/PROJECT_OVERVIEW.md)**：深入介绍项目初衷、核心痛点、三大收录原则、仿 aihot 视觉设计哲学与系统架构。
-- 📈 **[项目进度与演进里程碑记录](docs/PROGRESS.md)**：详细记录立项、卡点攻克、13 家平台扩充、UI 全面重构、故障排查至完美上线的全过程与路线图。
+- 🕒 **[活动雷达设计与核验规则](docs/ACTIVITY_RADAR.md)**：来源、时间字段、人工核验与覆盖边界。
+- 🔎 **[活动内容缺失的根因分析](docs/ROOT_CAUSE_ANALYSIS.md)**：旧版为何漏掉限时活动，以及本次修复的验证边界。
+- 📖 **[原项目背景与架构设计文档](docs/PROJECT_OVERVIEW.md)**：记录初版 API 额度站的历史设计；其旧收录边界已由活动雷达方案取代。
+- 📈 **[项目进度与演进里程碑记录](docs/PROGRESS.md)**：记录立项、13 家平台扩充、UI 重构及后续活动雷达改造。
 - 🌐 **[自定义域名绑定指南](docs/CUSTOM_DOMAIN_GUIDE.md)**：介绍如何零成本为本项目绑定专属独立顶级域名的操作步骤。
 
 ## 部署与自动化更新
 
-本项目采用 GitHub 零成本自动化方案：
-1. **定时抓取核验**：GitHub Actions 每日（北京时间 06:17）自动抓取各平台页面，检测免费额度变动，提交快照到仓库；
-2. **静态站自动重建**：Next.js 15 静态站自动构建并部署到 GitHub Pages 全球 CDN，零服务器、免运维、永久自更新。
+本项目采用 GitHub Actions 与 GitHub Pages：
+1. **公开线索**：计划每 30 分钟搜索 Google News RSS、V2EX Atom 和 Bluesky 公共帖；新增线索先标为“待核实”，有数据变化时重建静态站。
+2. **固定平台额度**：每日检查旧版平台页面的可达性和关键词，仅作为弱信号，不自动证明额度有效。
+3. **人工整理活动**：只核对到媒体报道的标为“报道待官方核实”；直接核对官方规则的标为“规则已核验”。领取和使用窗口分开记录，来源仅给日期时不补造具体时刻。
 
-详见 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)。
+定时任务和搜索引擎索引都有延迟，不能保证全网帖子在 30–60 分钟内出现；登录墙、图片内活动和未接入的来源需要通过[活动线索模板](https://github.com/nasated/cn-free-token-hub/issues/new/choose)补充。
+
+详见 [`.github/workflows/discover.yml`](.github/workflows/discover.yml) 与 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)。
 
 ## 本地开发
 
@@ -34,6 +38,8 @@
 npm install
 npm run dev        # 本地预览
 npm run crawl      # 手动跑一次核验
+npm run discover   # 搜索公开新闻和社区线索
+npm run validate:activities
 npm run build      # 构建静态站
 ```
 
@@ -51,17 +57,18 @@ npm run build      # 构建静态站
 
 - `data/platforms.json` — 平台额度源数据
 - `data/changelog.json` — 额度变更日志（站点"最新动态"栏目的数据来源）
+- `data/leads.json` — 自动发现、尚未核实的公开线索
+- `data/campaigns.json` — 人工核对报道或官方规则的活动与时间范围
 
 ## 数据贡献
 
-如果你发现某个平台的免费额度信息有误或过期，欢迎开 Issue，按以下格式提供：
+如果你发现新产品、限时 Token 赠送或价格折扣，欢迎用活动线索模板提供：
 
-- 平台名称
-- 当前活动链接
-- 免费额度形式（金额 / 代金券 / 积分）
-- 是否 API 可用
-- 是否需要实名 / 信用卡
-- 截至日期
+- 原始活动链接和平台名称
+- 赠送额度或折扣前后价格、计费单位
+- API 可调用还是产品内专用
+- 领取开始与截止、使用开始与截止、时区
+- 会员、实名、地区等条件；未知项请写“未公布”
 
 ## License
 
@@ -69,4 +76,4 @@ MIT
 
 ## 部署状态
 
-✅ 已上线：https://nasated.github.io/cn-free-token-hub/ （2026-09-24）
+网站地址：https://nasated.github.io/cn-free-token-hub/ 。活动雷达的定时发现与发布结果可在 [GitHub Actions](https://github.com/nasated/cn-free-token-hub/actions) 查看；首次部署后仍需核对线上页面和定时任务。

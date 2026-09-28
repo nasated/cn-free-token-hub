@@ -20,6 +20,7 @@ export default function Sidebar({
   lastUpdated,
 }: SidebarProps) {
   const navItems = [
+    { id: "activities", label: "活动线索", icon: "🕒", badge: "NEW" },
     { id: "featured", label: "精选热门", icon: "⚡", badge: null },
     { id: "all", label: "全部额度", icon: "📋", badge: platformCount },
     { id: "no_realname", label: "免实名专区", icon: "🎁", badge: noRealNameCount },
@@ -45,22 +46,22 @@ export default function Sidebar({
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-base font-bold tracking-tight text-ink-900">
-                  CN FREE
+                  TOKEN HUB
                 </span>
                 <span className="rounded bg-brand-light px-1.5 py-0.5 text-[10px] font-bold text-brand-dark">
-                  API
+                  AI
                 </span>
               </div>
               <p className="text-[11px] text-ink-500 font-medium">
-                国内模型免费额度雷达
+                Token 活动与额度雷达
               </p>
             </div>
           </div>
 
           {/* 自动更新状态微标 */}
           <div className="mt-3 flex items-center gap-2 rounded-lg bg-surface-card px-2.5 py-1.5 border border-surface-border text-[11px] text-ink-600">
-            <span className="live-pulse"></span>
-            <span className="truncate">每日 06:17 自动核验更新</span>
+            <span className="h-2 w-2 rounded-full bg-ink-400"></span>
+            <span className="truncate">活动计划每 30 分钟搜索</span>
           </div>
         </div>
 
@@ -163,7 +164,7 @@ export default function Sidebar({
       <div className="pt-4 border-t border-surface-border space-y-3">
         <ThemeToggle />
         <div className="text-[11px] text-ink-400 px-1 leading-relaxed">
-          <div>核验基准：{lastUpdated}</div>
+          <div>固定额度资料日期：{lastUpdated}</div>
           <div className="mt-0.5 text-[10px]">纯静态托管 · GitHub Actions 驱动</div>
         </div>
       </div>

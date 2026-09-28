@@ -81,9 +81,8 @@ export default function FeedItem({
               <span className="text-xs text-ink-400 font-mono">
                 {platform.nameEn}
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600 border border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800">
-                <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                已核验
+              <span className="inline-flex items-center gap-1 rounded-full bg-surface-hover px-2 py-0.5 text-xs font-medium text-ink-700 border border-surface-border">
+                历史资料 · 请以官网为准
               </span>
             </div>
 
@@ -144,7 +143,7 @@ export default function FeedItem({
           {/* 第五行：底栏操作与直达 */}
           <div className="mt-3.5 pt-2.5 border-t border-surface-border flex flex-wrap items-center justify-between gap-2 text-xs">
             <span className="text-[11px] text-ink-400">
-              最后自动核验：{platform.lastVerified}
+              资料日期：{platform.lastVerified}
             </span>
 
             <div className="flex items-center gap-2">

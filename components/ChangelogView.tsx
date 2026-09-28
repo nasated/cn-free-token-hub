@@ -31,15 +31,15 @@ export default function ChangelogView({ entries }: ChangelogViewProps) {
       <div className="flex items-center justify-between pb-3 border-b border-surface-border">
         <div>
           <h2 className="text-lg font-bold text-ink-900">
-            国内模型免费额度 · 变更日报
+            固定平台额度 · 页面变动日志
           </h2>
           <p className="text-xs text-ink-500 mt-0.5">
-            GitHub Actions 每日自动核验爬取 · 监测各平台最新政策与页面变动
+            每日检查页面可达性与关键词变化；这些记录不代表活动已核验
           </p>
         </div>
         <div className="flex items-center gap-1.5 text-xs text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800 font-medium">
           <span className="live-pulse"></span>
-          持续监控中
+          每日检查
         </div>
       </div>
 

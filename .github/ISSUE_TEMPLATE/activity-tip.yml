@@ -1,0 +1,56 @@
+name: 提交 Token 活动线索
+description: 提供原始活动链接，帮助补充新闻检索遗漏的产品和限时优惠。
+title: "[活动线索] "
+body:
+  - type: input
+    id: source
+    attributes:
+      label: 原始消息或官方规则链接
+      description: 请尽量给原始 URL，而不是搜索结果页或截图。
+    validations:
+      required: true
+  - type: input
+    id: product
+    attributes:
+      label: 平台或产品名称
+    validations:
+      required: true
+  - type: dropdown
+    id: offer
+    attributes:
+      label: 活动类型
+      options:
+        - 赠送 Token 或积分
+        - 限时免费使用
+        - Token 或 API 价格折扣
+        - 低价 Token 或 API 调用
+        - 暂不确定
+    validations:
+      required: true
+  - type: dropdown
+    id: access
+    attributes:
+      label: 使用场景
+      options:
+        - 可用 API Key 编程调用
+        - 仅限产品内使用
+        - 暂不确定
+    validations:
+      required: true
+  - type: textarea
+    id: dates
+    attributes:
+      label: 领取和使用的时间范围
+      description: 分开填写开始、领取截止、使用开始和使用截止；没公布的写“未公布”，不要推算。
+      placeholder: |
+        消息发布时间：
+        领取开始：
+        领取截止：
+        使用开始：
+        使用截止：
+        时区：
+  - type: textarea
+    id: terms
+    attributes:
+      label: 额度、折扣和参与条件
+      description: 折扣请注明原价、活动价、计费单位及适用模型；如需付费会员或实名，也请注明。

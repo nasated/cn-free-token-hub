@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CN Free Token Hub · 国内模型免费额度资讯站",
+  title: "CN Free Token Hub · Token 活动与优惠雷达",
   description:
-    "每日自动核验中国境内 API 平台的免费额度：智谱、阿里百炼、硅基流动、Kimi、ModelScope 等。只收录 API 可直接调用的免费额度，持续更新。",
+    "发现大模型 Token 赠送、限时免费与折扣线索；区分 API 可调用和产品内专用额度，明确来源与领取、使用期限。",
   keywords: [
     "免费额度",
+    "Token 活动",
+    "Token 折扣",
+    "限时免费",
     "免费 Token",
     "API 免费",
     "智谱",
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "nasated" }],
   openGraph: {
     title: "CN Free Token Hub",
-    description: "国内模型免费 API 额度资讯站 · 每日自动核验",
+    description: "大模型 Token 赠送、限时免费与折扣活动雷达",
     type: "website",
   },
   robots: {

@@ -12,10 +12,13 @@ on:
       - "scripts/**"
       - "app/**"
       - "components/**"
+      - "lib/**"
       - "package.json"
+      - "package-lock.json"
       - "next.config.mjs"
       - "tailwind.config.ts"
       - ".github/workflows/deploy.yml"
+      - ".github/workflows/discover.yml"
   schedule:
     # 北京时间每天 06:17（UTC 22:17）自动核验，避开整点峰值
     - cron: "17 22 * * *"

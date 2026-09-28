@@ -82,9 +82,8 @@ export default function PlatformCard({
           </div>
 
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600 border border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800">
-              <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-              已核验
+            <span className="inline-flex items-center gap-1 rounded-full bg-surface-hover px-2 py-0.5 text-xs font-medium text-ink-700 border border-surface-border">
+              历史资料 · 请以官网为准
             </span>
             <button
               type="button"

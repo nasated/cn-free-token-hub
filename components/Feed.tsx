@@ -120,7 +120,7 @@ export default function Feed({
             </span>
           </div>
           <p className="text-xs text-ink-500 mt-1">
-            仅收录中国境内 API 可直接调用的额度 · 每日定时核验
+            初版国内 API 固定额度 · 每日页面检查仅提供弱信号
           </p>
         </div>
 

@@ -4,13 +4,13 @@
  * 做什么：
  * 1. 读取 data/platforms.json（源数据）与 data/changelog.json（变更日志）
  * 2. 逐个抓取各平台 verifyUrl，做可达性 + 关键词弱信号核验
- * 3. 有变化时更新 lastVerified / verifyStatus，并追加变更日志
+ * 3. 有变化时更新自动检查时间 / 核验状态，并追加变更日志
  * 4. 写回 data/，由 CI 提交
  *
  * 不做什么（重要）：
  * - 不解析具体额度数字，不保证额度仍然"有效"
  * - 抓取失败不会把平台标成"已失效"，只会标 needs_verification
- * - 变更日志条目一律标注 auto-detected，需人工复查
+ * - 自动检查不能更新人工核验日期，也不能把待核验条目自动升为 verified
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -39,6 +39,7 @@ interface Platform {
   apiUsable: boolean;
   freeTier: FreeTier;
   lastVerified: string;
+  lastChecked?: string;
   verifyStatus: "verified" | "needs_verification" | "unknown";
   keywordHits?: number;
   valueScore: number;
@@ -93,7 +94,8 @@ async function main() {
 
   for (const p of platformsData.platforms) {
     const result = await verifyPlatform(p.verifyUrl, p.keywordHits);
-    p.lastVerified = todayStr;
+    // HTTP 可达与关键词命中只是自动检查，不能冒充人工核验日期。
+    p.lastChecked = now;
 
     if (!result.reachable) {
       unreachableCount++;
@@ -153,10 +155,7 @@ async function main() {
       continue;
     }
 
-    // stable
-    if (p.verifyStatus !== "verified") {
-      p.verifyStatus = "verified";
-    }
+    // stable 仅表示页面关键词没有明显变化，不能自动升为已核验。
     console.log(`[正常] ${p.name} → 命中 ${result.keywordHits} 个关键词`);
   }
 

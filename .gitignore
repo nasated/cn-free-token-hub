@@ -1,6 +1,7 @@
 # 依赖
 node_modules/
 .next/
+*.tsbuildinfo
 out/
 .next/
 

@@ -1,5 +1,7 @@
 # CN Free Token Hub · 项目进度与演进记录
 
+> 下文的“完美上线”描述初版静态页面资源修复，不代表活动发现功能已经完成。2026-09-25 的活动雷达改造与覆盖边界见 [活动雷达设计](ACTIVITY_RADAR.md)。
+
 > **文档状态**：持续维护  
 > **当前阶段**：✅ 已完成全栈重构、全自动化上线与长期自维护状态  
 > **生产线上地址**：[https://nasated.github.io/cn-free-token-hub/](https://nasated.github.io/cn-free-token-hub/)

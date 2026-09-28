@@ -1,5 +1,7 @@
 # CN Free Token Hub · 项目背景与设计文档
 
+> 本文记录初版“境内 API 固定额度站”的历史设计。2026-09-25 用户将范围扩展至国内外 Token 赠送、限时免费、折扣及产品内额度；当前方案见 [活动雷达设计](ACTIVITY_RADAR.md)。
+
 > **项目名称**：CN Free Token Hub（国内模型免费 API 额度雷达）  
 > **线上访问地址**：[https://nasated.github.io/cn-free-token-hub/](https://nasated.github.io/cn-free-token-hub/)  
 > **GitHub 仓库**：[https://github.com/nasated/cn-free-token-hub](https://github.com/nasated/cn-free-token-hub)  

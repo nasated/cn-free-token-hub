@@ -7,6 +7,7 @@ interface MobileTabBarProps {
 
 export default function MobileTabBar({ currentTab, onSelectTab }: MobileTabBarProps) {
   const tabs = [
+    { id: "activities", label: "活动", icon: "🕒" },
     { id: "featured", label: "精选", icon: "⚡" },
     { id: "no_realname", label: "免实名", icon: "🎁" },
     { id: "permanent", label: "永久免费", icon: "♾️" },

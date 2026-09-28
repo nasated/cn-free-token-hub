@@ -1,0 +1,71 @@
+name: Discover Token Offers
+
+# 每半小时查公开新闻线索。未核实线索与人工核验活动分开存放。
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 搜索活动线索
+        run: npm run discover
+      - id: commit
+        name: 保存新增线索
+        run: |
+          git add data/leads.json
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(data): discover activity leads [skip ci]"
+            if ! git push; then
+              git pull --rebase
+              git push
+            fi
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+  deploy:
+    needs: discover
+    if: needs.discover.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 构建静态站
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./out
+      - id: deploy
+        uses: actions/deploy-pages@v5

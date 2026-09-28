@@ -7,8 +7,12 @@ import Feed from "@/components/Feed";
 import ChangelogView from "@/components/ChangelogView";
 import AboutView from "@/components/AboutView";
 import ThemeToggle from "@/components/ThemeToggle";
+import ActivityFeed from "@/components/ActivityFeed";
+import { Activity } from "@/lib/activity";
 import platformsData from "@/data/platforms.json";
 import changelogData from "@/data/changelog.json";
+import campaignsData from "@/data/campaigns.json";
+import leadsData from "@/data/leads.json";
 
 export interface Platform {
   id: string;
@@ -44,11 +48,14 @@ export interface ChangelogEntry {
 
 const platforms = platformsData.platforms as unknown as Platform[];
 const changelogEntries = changelogData.entries as unknown as ChangelogEntry[];
+const campaigns = campaignsData.activities as Activity[];
+const sourceLeadIds = new Set(campaigns.flatMap((item) => item.sourceLeadIds || []));
+const activities = [...campaigns, ...(leadsData.activities as Activity[]).filter((item) => !sourceLeadIds.has(item.id))];
 const lastVerified = platforms.map((p) => p.lastVerified).sort().pop() || "今日";
 const noRealNameCount = platforms.filter((p) => !p.freeTier.requiresRealName).length;
 
 export default function Home() {
-  const [currentTab, setCurrentTab] = useState<string>("featured");
+  const [currentTab, setCurrentTab] = useState<string>("activities");
   const [starredIds, setStarredIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -90,10 +97,10 @@ export default function Home() {
             <span className="text-xl">🪙</span>
             <div>
               <span className="text-sm font-bold tracking-tight text-ink-900">
-                CN FREE API
+                TOKEN HUB
               </span>
               <p className="text-[10px] text-ink-500 font-medium">
-                国内模型额度雷达
+                Token 活动雷达
               </p>
             </div>
           </div>
@@ -109,11 +116,11 @@ export default function Home() {
             <div className="mb-6 rounded-2xl border border-surface-border bg-gradient-to-br from-surface-card via-surface-card to-surface-hover/50 p-5 sm:p-7 shadow-sm">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 border border-amber-200 dark:bg-amber-950 dark:border-amber-800">
-                  <span className="live-pulse"></span>
-                  每日自动核验 · 纯境内 API 免费额度
+                  <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                  固定平台额度 · 每日页面检查
                 </span>
                 <span className="text-xs text-ink-400">
-                  基准日期：{lastVerified}
+                资料日期：{lastVerified}
                 </span>
               </div>
 
@@ -121,7 +128,7 @@ export default function Home() {
                 国内模型免费 API 额度，一站看全
               </h1>
               <p className="mt-2 text-xs sm:text-sm text-ink-600 max-w-2xl leading-relaxed">
-                不用挨个翻官方控制台。每日自动核验智谱、阿里百炼、硅基流动、DeepSeek、Kimi、讯飞星火、零一万物、腾讯混元等 13+ 国内主流大模型平台的免费额度政策。
+                这里保留初版收录的国内 API 平台固定额度。页面检查仅提供变化线索，具体政策和有效期仍以官方规则为准。
               </p>
 
               {/* 核心指标统计 */}
@@ -163,7 +170,9 @@ export default function Home() {
           )}
 
           {/* 动态视图渲染 */}
-          {currentTab === "changelog" ? (
+          {currentTab === "activities" ? (
+            <ActivityFeed activities={activities} />
+          ) : currentTab === "changelog" ? (
             <ChangelogView entries={changelogEntries} />
           ) : currentTab === "about" ? (
             <AboutView />
@@ -181,10 +190,10 @@ export default function Home() {
         {/* 底部版权 */}
         <footer className="mt-12 border-t border-surface-border pt-6 pb-2 text-center text-xs text-ink-400">
           <p>
-            CN Free Token Hub · 借鉴 aihot 风格架构与 AI-Search 零成本自动更新机制
+            CN Free Token Hub · 活动线索与固定额度
           </p>
           <p className="mt-1">
-            数据由 GitHub Actions 每日自动核验 · 仅收录合法合规境内模型 API
+            新闻线索仅供发现活动；领取条件和期限以原始规则为准
           </p>
         </footer>
       </div>
