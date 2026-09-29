@@ -1,40 +1,9 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-09-29T01:18:56.936Z"
+    "lastDataChange": "2026-09-29T01:20:53.539Z"
   },
   "activities": [
-    {
-      "id": "dd94922c0377c1281173",
-      "title": "Sitting in a meeting & finding out that a bunch of senior leaders thought AI Tokens were free, and furthermore that the vendors changed their subscription models & pricing",
-      "platform": "新产品／待识别",
-      "kind": "gift",
-      "accessType": "unknown",
-      "claimWindowApplicable": null,
-      "reviewStatus": "unverified",
-      "sourceUrl": "https://bsky.app/profile/campbelljd.bsky.social/post/3mwlzrwe6322x",
-      "sourceName": "Bluesky · @campbelljd.bsky.social",
-      "sourceType": "community",
-      "officialUrl": null,
-      "publishedAt": "2026-09-28T19:18:53.011Z",
-      "discoveredAt": "2026-09-29T01:18:56.936Z",
-      "verifiedAt": null,
-      "claimStartAt": null,
-      "claimEndAt": null,
-      "claimStartDate": null,
-      "claimEndDate": null,
-      "claimWindowText": null,
-      "useStartAt": null,
-      "useEndAt": null,
-      "useStartDate": null,
-      "useEndDate": null,
-      "useWindowText": null,
-      "validityRule": null,
-      "amount": null,
-      "discount": null,
-      "eligibility": null,
-      "evidence": null
-    },
     {
       "id": "e2fbd65219c58f89f85f",
       "title": "🔥 [HappyCode] 企业级稳定 API 中转，免费领取 100 刀体验额度🔥",

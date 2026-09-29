@@ -4,7 +4,7 @@ const modelTerms = /\bAI\b|\bLLM\b|\bmodel\b|人工智能|大模型|模型|\bAPI
 const quotaTerms = /Token|额度|积分|Credits?|算力|体验金额|试用金|\d+(?:\.\d+)?\s*(?:亿|万)/i;
 const offerTerms = /免费|赠送|送|限时|折扣|优惠|降价|半价|五折|促销|活动|试用|补贴|礼包|薅|白嫖|畅用|限免|倍率|低价|便宜|\bOFF\b|\bfree\b|giveaway|discount|promotion|promo|price cut|trial|\d+(?:\.\d+)?\s*(?:¢|\$|¥|元)\s*\//i;
 const directAccessTerms = /免费(?:调用|使用)|限时免费|free (?:API|access|usage)|\d+(?:\.\d+)?\s*倍率|\d+\s*%\s*OFF/i;
-const offTopicTerms = /汽车|智己|LS6|新车|车型|车企|上市权益价|股市|公募基金|比特币|加密货币|区块链|楼市|推理优化技术报告|经济学家|本质上|营销方式|代理IP|住宅IP|代充服务|crypto wallet|Ethereum|Solana|\bBNB Chain\b|not free|fewer tokens|less tokens|free rein with tokens|hiring nonstop/i;
+const offTopicTerms = /汽车|智己|LS6|新车|车型|车企|上市权益价|股市|公募基金|比特币|加密货币|区块链|楼市|推理优化技术报告|经济学家|本质上|营销方式|代理IP|住宅IP|代充服务|crypto wallet|Ethereum|Solana|\bBNB Chain\b|not free|fewer tokens|less tokens|free rein with tokens|hiring nonstop|\b(?:thought|assumed)\b.{0,100}\b(?:tokens?|credits?)\b.{0,30}\b(?:were|are) free\b/i;
 const referralTerms = /#ad\b|#freebies\b|\b(?:redeem|referral) code\b|\bI get\b.{0,30}\btoo\b|\bwhop\.com\/paydirt\b/i;
 
 export function candidateTitle(title: string): boolean {

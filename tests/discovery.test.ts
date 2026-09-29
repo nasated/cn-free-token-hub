@@ -21,6 +21,7 @@ test("rejects observed unrelated Token headlines", () => {
   assert.equal(candidateTitle("免费体验 AI 工具稳定调用、API 调用与自动化脚本、住宅IP"), false);
   assert.equal(candidateTitle("The official IDA MCP Server is free and uses 20% fewer tokens with any LLM"), false);
   assert.equal(candidateTitle("Super AI crypto wallet reads your Ethereum tokens for free"), false);
+  assert.equal(candidateTitle("Senior leaders thought AI Tokens were free, but vendors changed subscriptions & pricing"), false);
 });
 
 test("community referral spam is filtered while small-product offers remain", () => {
