@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-03T13:54:27.806Z"
+    "lastDataChange": "2026-10-03T17:56:12.789Z"
   },
   "activities": [
+    {
+      "id": "8c9344c8189222b73ac3",
+      "title": "Wrote up my honest take on Muse after a month of using it — personal AI agent, not just a chatbot: yesdearspoons.substack.com/p/i-tried-mu... New? Code 7FD76C = 1B free tokens for both of us (Settings, within 48 hours of",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/yesdearspoons.bsky.social/post/3mwy5gjis2c25",
+      "sourceName": "Bluesky · @yesdearspoons.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-03T14:56:02.261Z",
+      "discoveredAt": "2026-10-03T17:56:12.789Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "aaef4c5cadb74542b178",
       "title": "Google大幅收紧Gemini免费使用权限 免费用户下周起仅可使用Flash-Lite模型",
