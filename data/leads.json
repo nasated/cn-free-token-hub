@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-03T17:56:12.789Z"
+    "lastDataChange": "2026-10-03T21:11:47.893Z"
   },
   "activities": [
+    {
+      "id": "8d3d23c3c6743bf304ff",
+      "title": "Classic pyramid scheme—\"double your money fast\" never works. This is exactly why self-custody matters: you control your keys, no platform can freeze your funds. Verify tokens before buying with our free AI analysis, and ",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/superaiwallet.bsky.social/post/3mwynvzsr6c2w",
+      "sourceName": "Bluesky · @superaiwallet.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-03T19:51:01.905Z",
+      "discoveredAt": "2026-10-03T21:11:47.893Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "8c9344c8189222b73ac3",
       "title": "Wrote up my honest take on Muse after a month of using it — personal AI agent, not just a chatbot: yesdearspoons.substack.com/p/i-tried-mu... New? Code 7FD76C = 1B free tokens for both of us (Settings, within 48 hours of",
