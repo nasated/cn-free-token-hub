@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-03T08:33:23.330Z"
+    "lastDataChange": "2026-10-03T13:54:27.806Z"
   },
   "activities": [
+    {
+      "id": "aaef4c5cadb74542b178",
+      "title": "Google大幅收紧Gemini免费使用权限 免费用户下周起仅可使用Flash-Lite模型",
+      "platform": "新产品／待识别",
+      "kind": "free_access",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9PWTFkWk5Rdk5RakNhb182b0hwZ3psRlFXdDBJV2thckY5bzVBU0R6dm9IWXc5cDRvbm5jajhBa19oZjBQWkJXQ3p5X3FEeDlxQXlHQ3dkMkNOMDE2cjVHUQ?oc=5",
+      "sourceName": "cnBeta.COM",
+      "sourceType": "news",
+      "officialUrl": null,
+      "publishedAt": "2026-10-03T13:27:00.000Z",
+      "discoveredAt": "2026-10-03T13:54:27.806Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "88cac3b34f22b593c2a1",
       "title": "🚨DON'T MISS OUT! FREE 1 Billion Muse AI Tokens 🔗👇 https://www.hunt4freebies.com/free-1-billion-muse-ai-tokens/",
