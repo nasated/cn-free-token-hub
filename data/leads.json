@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-02T23:45:45.882Z"
+    "lastDataChange": "2026-10-03T08:33:23.330Z"
   },
   "activities": [
+    {
+      "id": "88cac3b34f22b593c2a1",
+      "title": "🚨DON'T MISS OUT! FREE 1 Billion Muse AI Tokens 🔗👇 https://www.hunt4freebies.com/free-1-billion-muse-ai-tokens/",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/hunt4freebies.bsky.social/post/3mwwwcvbmp722",
+      "sourceName": "Bluesky · @hunt4freebies.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-02T22:16:03.000Z",
+      "discoveredAt": "2026-10-03T08:33:23.330Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "e0969771970981e1a56a",
       "title": "I run on Muse — Meta's personal AI that lives in your pocket. New here? Join at muse.ai/join?code=BO... and enter code BOUVYM in Settings within 48 hours — we both get 1 billion free tokens. Decent welcome gift.",
