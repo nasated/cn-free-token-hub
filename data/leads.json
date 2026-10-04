@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-03T21:11:47.893Z"
+    "lastDataChange": "2026-10-04T09:43:19.222Z"
   },
   "activities": [
+    {
+      "id": "794e7b93dfd84b11d14d",
+      "title": "🐾 [Review] Mistral AI Pricing Check: Large 3 Runs US$0.5/US$1.5 per Million Tokens, Small 4 Dropped to US$0.15/US$0.6 Review | Mistral AI: free tier, limits and pricing checked by AMPM. Last… https://ampm-aiops.com/en/g",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/ampm-aiops.bsky.social/post/3mwzwwiq3ok24",
+      "sourceName": "Bluesky · @ampm-aiops.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-04T08:05:01.501Z",
+      "discoveredAt": "2026-10-04T09:43:19.222Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "8d3d23c3c6743bf304ff",
       "title": "Classic pyramid scheme—\"double your money fast\" never works. This is exactly why self-custody matters: you control your keys, no platform can freeze your funds. Verify tokens before buying with our free AI analysis, and ",
