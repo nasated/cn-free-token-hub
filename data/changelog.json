@@ -2,9 +2,41 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/changelog.json",
   "meta": {
     "description": "免费额度变更日志。每次抓取核验发现额度变化时追加一条，是站点「最新动态」栏目的数据来源。",
-    "lastCrawl": "2026-10-03T01:13:59.709Z"
+    "lastCrawl": "2026-10-04T00:43:47.584Z"
   },
   "entries": [
+    {
+      "date": "2026-10-04",
+      "platform": "零一万物 01.AI",
+      "type": "changed",
+      "title": "零一万物 01.AI 页面内容变化（存疑）",
+      "detail": "关键词命中从 0 降至 0。可能为页面改版或额度政策调整，需人工复查官方页面。片段：(无)",
+      "verified": false
+    },
+    {
+      "date": "2026-10-04",
+      "platform": "百川智能 Baichuan",
+      "type": "unreachable",
+      "title": "核验失败：百川智能 Baichuan 页面无法访问",
+      "detail": "抓取 https://platform.baichuan-ai.com/docs 失败（fetch failed）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
+    {
+      "date": "2026-10-04",
+      "platform": "阶跃星辰 StepFun",
+      "type": "changed",
+      "title": "阶跃星辰 StepFun 页面内容变化（自动检测）",
+      "detail": "关键词命中数变化：0 → 1。自动检测，需人工复查后确认额度是否真的变动。片段：接试模型效果，确认可用后再回来接 API 打开 Studio 继续构建与获得支持 开发者计划 面向独立开发者与初创团队的额度与技术支持 Builder Program 技术支持 交流群、企业对接与限速提升申请 platform@stepfun.",
+      "verified": false
+    },
+    {
+      "date": "2026-10-04",
+      "platform": "CodeGeeX",
+      "type": "unreachable",
+      "title": "核验失败：CodeGeeX 页面无法访问",
+      "detail": "抓取 https://codegeex.cn/ 失败（fetch failed）。额度状态未确认，需人工复查，不视为已失效。",
+      "verified": false
+    },
     {
       "date": "2026-10-03",
       "platform": "零一万物 01.AI",
