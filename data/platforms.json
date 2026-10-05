@@ -2,7 +2,7 @@
   "$schema": "https://cn-free-token-hub.github.io/schema/platforms.json",
   "meta": {
     "description": "历史国内模型 API 免费额度资料；自动抓取只检查页面和关键词，具体额度与期限需复核官方规则。",
-    "lastCrawl": "2026-10-04T00:43:47.584Z",
+    "lastCrawl": "2026-10-05T01:01:31.742Z",
     "lastManualVerify": "2026-09-24",
     "platformCount": 13,
     "categories": {
@@ -45,7 +45,7 @@
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "dashscope",
@@ -73,7 +73,7 @@
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 51,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "siliconflow",
@@ -100,7 +100,7 @@
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "deepseek",
@@ -128,7 +128,7 @@
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "kimi",
@@ -155,7 +155,7 @@
       "verifyStatus": "verified",
       "valueScore": 8,
       "keywordHits": 6,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "xfyun",
@@ -182,7 +182,7 @@
       "verifyStatus": "verified",
       "valueScore": 9,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "modelscope",
@@ -209,7 +209,7 @@
       "verifyStatus": "verified",
       "valueScore": 8,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "yi",
@@ -236,7 +236,7 @@
       "verifyStatus": "needs_verification",
       "valueScore": 7,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "hunyuan",
@@ -263,7 +263,7 @@
       "verifyStatus": "verified",
       "valueScore": 7,
       "keywordHits": 50,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "baichuan",
@@ -289,8 +289,8 @@
       "lastVerified": "2026-09-24",
       "verifyStatus": "needs_verification",
       "valueScore": 7,
-      "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "keywordHits": 1,
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "minimax",
@@ -317,7 +317,7 @@
       "verifyStatus": "verified",
       "valueScore": 7,
       "keywordHits": 4,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "stepfun",
@@ -344,7 +344,7 @@
       "verifyStatus": "needs_verification",
       "valueScore": 7,
       "keywordHits": 1,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     },
     {
       "id": "codegeex",
@@ -371,7 +371,7 @@
       "verifyStatus": "needs_verification",
       "valueScore": 7,
       "keywordHits": 0,
-      "lastChecked": "2026-10-04T00:43:47.584Z"
+      "lastChecked": "2026-10-05T01:01:31.742Z"
     }
   ]
 }
