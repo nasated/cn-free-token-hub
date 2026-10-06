@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-06T09:25:00.948Z"
+    "lastDataChange": "2026-10-06T16:16:08.413Z"
   },
   "activities": [
+    {
+      "id": "462b154a5c62227f957f",
+      "title": "making Muse, an attempt to charge you air plane pricing for a shit ton of AI tokens , while hacking your friends ! for a thing you can do for free right now.",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/jimmy-jim-james.bsky.social/post/3mx7o7crlr22b",
+      "sourceName": "Bluesky · @jimmy-jim-james.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-06T14:44:52.108Z",
+      "discoveredAt": "2026-10-06T16:16:08.413Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "95cf90b24c460d8056b0",
       "title": "[Token Unlimited 中转站] Azure 官 key 渠道，满血 GPT 模型，最后两天限时优惠，留言赠 $3（新老同享）",
