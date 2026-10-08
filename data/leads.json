@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-08T19:25:56.316Z"
+    "lastDataChange": "2026-10-08T23:57:29.534Z"
   },
   "activities": [
     {
@@ -2466,37 +2466,6 @@
       "officialUrl": null,
       "publishedAt": "2026-09-28T03:29:23.000Z",
       "discoveredAt": "2026-09-28T04:39:02.976Z",
-      "verifiedAt": null,
-      "claimStartAt": null,
-      "claimEndAt": null,
-      "useStartAt": null,
-      "useEndAt": null,
-      "validityRule": null,
-      "amount": null,
-      "discount": null,
-      "eligibility": null,
-      "evidence": null,
-      "claimWindowApplicable": null,
-      "claimWindowText": null,
-      "useWindowText": null,
-      "claimStartDate": null,
-      "claimEndDate": null,
-      "useStartDate": null,
-      "useEndDate": null
-    },
-    {
-      "id": "3a07439fe9389b84f6a4",
-      "title": "限时免费｜阿里云百炼决策模型预览版上线，并支持 Token Plan",
-      "platform": "阿里百炼／Qwen",
-      "kind": "free_access",
-      "accessType": "unknown",
-      "reviewStatus": "unverified",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9lSUNIYXJBQnFKQ25COVJQdDEyMWFnbHY3bVZjQnQ4Q2ZnMFNlWmJUXzNGSDI5akF3bDZfdDVvcHFTMmt2NGRISHAwY3d2aWxaNkd0MjdydUVJT1ByUEllMTBkZFVpYXBsUnJxM1F1Mlo?oc=5",
-      "sourceName": "53AI",
-      "sourceType": "news",
-      "officialUrl": null,
-      "publishedAt": "2026-09-24T22:40:40.000Z",
-      "discoveredAt": "2026-09-24T23:29:51.257Z",
       "verifiedAt": null,
       "claimStartAt": null,
       "claimEndAt": null,
