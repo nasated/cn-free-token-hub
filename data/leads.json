@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-09T18:48:08.124Z"
+    "lastDataChange": "2026-10-09T23:14:50.554Z"
   },
   "activities": [
+    {
+      "id": "a955ba3062a81e8bc198",
+      "title": "Claude Haiku 5.5：Anthropic 最快的模型也可免费使用",
+      "platform": "新产品／待识别",
+      "kind": "free_access",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9maVJRUkU5RU0wVGV5YVFiYmp0X2h4VmJKekFBYmc1YWNCMmdUeFp6Z1prbUxfVE1SbVNMVTdFTTJCZTdlaEI3bFdfVFFncmRHQ1pENUtjTkxBUEhTenhocUx5cHd0ZXA3VHhUckxJbWlybU5VcnJRcjhpTjBZcWc?oc=5",
+      "sourceName": "Notebookcheck CN",
+      "sourceType": "news",
+      "officialUrl": null,
+      "publishedAt": "2026-10-09T07:01:00.000Z",
+      "discoveredAt": "2026-10-09T23:14:50.554Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "b32f02c4df1ae00b0c84",
       "title": "You can commission mods too. It's not like AI is free, you have to spend to get tokens. You can pick between already existing community mods to customize your experience or create/commission mods to your exact specificat",
