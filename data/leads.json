@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-09T06:04:20.538Z"
+    "lastDataChange": "2026-10-09T13:12:01.716Z"
   },
   "activities": [
+    {
+      "id": "af35b322f2494a57e036",
+      "title": "Claude Startups 扩容，Anthropic 宣布免费提供一年 Claude Team 和 1,000 美元额度",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNzNUQ1lYNF95S2kzYmhGN2ZBN0dXQ2FvRlJQNlZIMTVmUVBYX3poNzRZaXNZWm91dXZMLTlDeFhfb0Yzc0pTTFk1aDZfZlQtd1hxVk9kc3dhQVdyanJ6R3FZLTBDblNobzNWVFhRdVlwNkJXR19yYzE2aVZNQkJUQTgwVE41LXphYk5sQ3BHeW5QbzFTREpQY0lGR1pfTjha?oc=5",
+      "sourceName": "Pasquale Pillitteri",
+      "sourceType": "news",
+      "officialUrl": null,
+      "publishedAt": "2026-10-06T18:30:31.000Z",
+      "discoveredAt": "2026-10-09T13:12:01.716Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "872c690527d599cb6975",
       "title": "Claude 按 1.9 折起用，新人加群送 10 美元额度",
