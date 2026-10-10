@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-10T08:59:48.623Z"
+    "lastDataChange": "2026-10-10T15:21:02.124Z"
   },
   "activities": [
+    {
+      "id": "ee515e543e44aeadf5d3",
+      "title": "Cline免费模型接入各种Agent，多账号免费token管够",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1lNHNZRGJUclYxNGhOekxuLWVXVzQ0VGpDQ1hhekxqNS1iTEdPQW9GTjBRYnZwNHJqUnpsaTN5dEw4eDFMMWd0TTdyTTJBSldvYkw5Sw?oc=5",
+      "sourceName": "手机网易网",
+      "sourceType": "news",
+      "officialUrl": null,
+      "publishedAt": "2026-10-09T20:53:17.000Z",
+      "discoveredAt": "2026-10-10T15:21:02.124Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "b2040cd0ebd28d8231d2",
       "title": "问一下可以分享中转站邀请吗？这个 deepseek-v4.1-flash 费用$0.001 / 1M 感觉蛮划算的，虽然只剩下两天活动。邀请和被邀请都可以立得 $2 体验额度",
