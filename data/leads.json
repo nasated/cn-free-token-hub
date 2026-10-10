@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-10T02:20:18.594Z"
+    "lastDataChange": "2026-10-10T08:59:48.623Z"
   },
   "activities": [
+    {
+      "id": "b2040cd0ebd28d8231d2",
+      "title": "问一下可以分享中转站邀请吗？这个 deepseek-v4.1-flash 费用$0.001 / 1M 感觉蛮划算的，虽然只剩下两天活动。邀请和被邀请都可以立得 $2 体验额度",
+      "platform": "DeepSeek",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://www.v2ex.com/t/1247667#reply0",
+      "sourceName": "V2EX · 推广",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-10T08:30:41.000Z",
+      "discoveredAt": "2026-10-10T08:59:48.623Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "253881126e8b84a6f345",
       "title": "芒果 AI-国模（deepseek glm kimi）惊爆价 0.05 倍率，我要点十个国模，注册就送体验金！",
