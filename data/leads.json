@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-12T19:20:42.314Z"
+    "lastDataChange": "2026-10-13T01:37:12.243Z"
   },
   "activities": [
+    {
+      "id": "b2530f46746eedb62219",
+      "title": "Microsoft announced a new “Maia 300” AI chip today that promises 40% more tokens per megawatt. Their stock price is up despite the free Office software clones that just came out. I guess they’re seen as gaining more than",
+      "platform": "新产品／待识别",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/kerrymitchell.mastodon.social.ap.brid.gy/post/3mxphfv33rjb2",
+      "sourceName": "Bluesky · @kerrymitchell.mastodon.social.ap.brid.gy",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-12T21:25:14.000Z",
+      "discoveredAt": "2026-10-13T01:37:12.243Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "92cf8b5ec872a9d6ee34",
       "title": "the \"no more handwritten code\" to me is like saying \"i need. i NEED to keep punching the tokens on the AI until free money comes out. i NEED to hit lucky number 7. wife left me & took the kids. please, claude. my mortgag",
