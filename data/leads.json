@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-15T19:23:08.623Z"
+    "lastDataChange": "2026-10-15T22:40:10.664Z"
   },
   "activities": [
+    {
+      "id": "957a3db203b22a316651",
+      "title": "It's simple: AI companies give unlimited free access for a flat fee to companies who then tell their employees to use it for literally everything (PowerPoint slides was my favorite) so AI companies can then tout how many",
+      "platform": "新产品／待识别",
+      "kind": "free_access",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/coachfinstock.bsky.social/post/3mxwttmv6z22t",
+      "sourceName": "Bluesky · @coachfinstock.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-15T19:56:56.491Z",
+      "discoveredAt": "2026-10-15T22:40:10.664Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "118841a1d6e80e978861",
       "title": "“$56k at api prices”, meaning they didn’t actually spend that much because these companies are constantly “giving” tokens away in deals/free usage/bundles. But it does maybe mean that it cost the AI company, who operates",
