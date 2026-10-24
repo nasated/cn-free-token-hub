@@ -1,9 +1,40 @@
 {
   "meta": {
     "description": "自动发现的公开新闻与社区线索，未核验活动真实性、适用范围或领取期限。",
-    "lastDataChange": "2026-10-24T09:07:08.650Z"
+    "lastDataChange": "2026-10-24T13:18:25.520Z"
   },
   "activities": [
+    {
+      "id": "14d7ad591bcc4686e6ce",
+      "title": "Moonshot AI's Kimi K3.1 Pro Tops Artificial Analysis Index at 55 Kimi K3.1 Pro scores 55 against GPT-6 Astra's 53, then goes free on November 4 with API pricing at $2 per million input tokens. Moonshot AI is pricing the ",
+      "platform": "Kimi",
+      "kind": "gift",
+      "accessType": "unknown",
+      "claimWindowApplicable": null,
+      "reviewStatus": "unverified",
+      "sourceUrl": "https://bsky.app/profile/yomimonoid.bsky.social/post/3mymr4dqsay2r",
+      "sourceName": "Bluesky · @yomimonoid.bsky.social",
+      "sourceType": "community",
+      "officialUrl": null,
+      "publishedAt": "2026-10-24T13:06:41.866Z",
+      "discoveredAt": "2026-10-24T13:18:25.520Z",
+      "verifiedAt": null,
+      "claimStartAt": null,
+      "claimEndAt": null,
+      "claimStartDate": null,
+      "claimEndDate": null,
+      "claimWindowText": null,
+      "useStartAt": null,
+      "useEndAt": null,
+      "useStartDate": null,
+      "useEndDate": null,
+      "useWindowText": null,
+      "validityRule": null,
+      "amount": null,
+      "discount": null,
+      "eligibility": null,
+      "evidence": null
+    },
     {
       "id": "c1553632b8bef1d7b68e",
       "title": "101–125 are up. If you make games with AI, reusing a ready-made object saves your AI the time and tokens it would spend generating it again. 125 of 500 free objects are out.",
